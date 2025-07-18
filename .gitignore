@@ -22,11 +22,6 @@
 *.run.xml
 *.bcf
 
-# Output folders
-output/
-_build/
-build/
-
 # TeX editor artifacts
 *.synctex.gz(busy)
 *.backup
@@ -34,6 +29,9 @@ build/
 
 # VS Code project settings
 .vscode/
+
+# Ignore the Literature Folder
+literature/
 
 # -----------------------------------
 # Markdown tools output (ignore)
@@ -63,7 +61,6 @@ build/
 *.nb-autosave
 *.wl-autosave
 *.nb.bak
-*.nb~
 *.nb.tmp
 *.wl-init
 
