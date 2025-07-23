@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage{physics}
+
+\begin{document}
+
+\section*{Vielbein of the Schwarzchild Metric \\ {\small 7/22/2025}}
+The Schwarzchild Metrc:
+\begin{align*}
+  \dd{s}^2 = -c^2 \left(1 - \frac{2GM}{c^2r}\right)\dd{t}^2 + \left(1 - \frac{2GM}{c^2r}\right)^{-1}\dd{r}^2 + r^2\dd{\theta}^2 + r^2\sin^2{\theta}\dd{\phi}^2
+\end{align*}
+I will use natural units ($G = 1$ and $c = 1$):
+\begin{align*}
+  \dd{s}^2 = -\left(1 - \frac{2M}{r}\right)\dd{t}^2 + \left(1 - \frac{2M}{r}\right)^{-1}\dd{r}^2 + r^2\dd{\theta}^2 + r^2\sin^2{\theta}\dd{\phi}^2
+\end{align*}
+
+This gives the following metric tensor:
+\begin{align*}
+  g_{\mu\nu} =
+  \begin{pmatrix}
+  -\left(1 - \frac{2M}{r}\right) & 0 & 0 & 0 \\
+  0 & \left(1 - \frac{2M}{r}\right)^{-1} & 0 & 0 \\
+  0 & 0 & r^2 & 0 \\
+  0 & 0 & 0 & r^2 \sin^2{\theta}
+\end{pmatrix}
+\end{align*}
+Using this, I can calculate the Vielbein $e^a_\mu$.
+
+Sanity check: The Vielbein is simply a set of basis vectors for each point of the manifold that express our metric. It will satisfy the following equation:
+\begin{align*}
+  g_{\mu\nu} = \eta_{ab}e^a_\mu e^b_\nu \qquad a,b = 0,1,2,3 \quad \mu,\nu = t,r,\theta,\phi
+\end{align*}
+where $\eta_{ab} = \text{diag}(-1,1,1,1)$ and is the Minkowski metric. Since the metric is diagonal, the equation can be simplified by saying $a=b$. I will also constrain the Vielbein to being a diagonal matrix, so $e^a_\mu = \text{diag}(e^0_t,e^1_r,e^2_\theta,e^3_\phi)$, which allows me to simplify further by saying $\mu = \nu$. This also gives a correspondance between local and Schwarzchild coordinates, where $a = 0,1,2,3$ correspond to $\mu = t,r,\theta,\phi$ respectively in the Vielbein. Any other combination equals $0$.
+
+So, I am left with the equation:
+\begin{align*}
+  g_{\mu\mu} = \eta_{aa}(e^a_\mu)^2
+\end{align*}
+
+Solving this explicitly:
+\begin{align*}
+  g_{tt} &= -\left(1 - \frac{2M}{r}\right) = -(e^0_t)^2 \\
+  &e^0_t = \left(1 - \frac{2M}{r}\right)^\frac{1}{2} \\ \\
+  g_{rr} &= \left(1 - \frac{2M}{r}\right)^{-1} = -(e^1_r)^2 \\
+  &e^1_r = \left(1 - \frac{2M}{r}\right)^{-\frac{1}{2}} \\ \\
+  g_{\theta\theta} &= r^2 = -(e^2_\theta)^2 \\
+  &e^2_\theta = r \\ \\
+  g_{\phi\phi} &= r^2\sin^2{\theta} = -(e^3_\phi)^2 \\
+  &e^3_\phi = r\sin{\theta}
+\end{align*}
+
+So, the Vielbein:
+\begin{align*}
+  e^a_\mu = 
+  \begin{pmatrix}
+    \left(1 - \frac{2M}{r}\right)^\frac{1}{2} & 0 & 0 & 0 \\
+    0 & \left(1 - \frac{2M}{r}\right)^{-\frac{1}{2}} & 0 & 0 \\
+    0 & 0 & r & 0 \\
+    0 & 0 & 0 & r\sin{\theta}
+  \end{pmatrix}
+\end{align*}
+
+\end{document}
