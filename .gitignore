@@ -33,9 +33,6 @@
 # Ignore the Literature Folder
 literature/
 
-# Ignore the code Folder (FOR NOW)
-code/
-
 # -----------------------------------
 # Markdown tools output (ignore)
 # -----------------------------------
