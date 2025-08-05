@@ -21,11 +21,12 @@ $S_{EC}$ is the Einstein-Cartan gravitational action, $S_m$ is the scalar field 
   R^{ab} &= \dd\omega^{ab} + \omega^a_c \wedge \omega^{cb} \\
   T^a &= \dd V^a + \omega^a_b \wedge V^b
 \end{align*}
-
-\section{Variation with respect to the Vielbein}
+The variation of the total action is
 \begin{align}
-  \var_V{S_{tot}} = \var_V{S_{EC}} + \var_V{S_m} + \var_V{S_{NY}}
+  \var{S_{tot}} = \var{S_{EC}} + \var{S_m} + \var{S_{NY}}
 \end{align}
+
+\section{Vielbein}
 \subsection{Einstein-Cartan Action}
 \begin{align}
   \var_V{S_{EC}} &= -\frac{M_{Pl}^2}{4}\int \epsilon_{abcd}(\var V^a \wedge V^b + V^a \wedge \var V^b) \wedge R^{cd} \nonumber \\
@@ -131,6 +132,13 @@ Now, focusing on $\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a}$. We can 
 which is the exact expression. Plugging this into eq. (12):
 \begin{align*}
   \var_V{S_{NY}} &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + 2\omega_{bc} \wedge \var{V^b} \wedge V^c)
+\end{align*}
+
+\section{Spin Connection}
+\subsection{Einstein-Cartan Action}
+\begin{align*}
+  \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{4} \int \epsilon_{abcd}V^a \wedge V^b \wedge \var{R^{cd}} \\
+  &= -\frac{M_{Pl}^2}{4} \int \epsilon_{abcd}V^a \wedge V^b \wedge (\dd{\var{\omega^{cd}}} + \var{\omega^c_f} \wedge \omega^{fd} + \omega^c_f \wedge \var{\omega^{fd}}) \\
 \end{align*}
 
 \end{document}
