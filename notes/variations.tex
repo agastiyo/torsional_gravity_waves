@@ -131,8 +131,17 @@ Now, focusing on $\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a}$. We can 
 \end{align*}
 which is the exact expression. Plugging this into eq. (12):
 \begin{align*}
-  \var_V{S_{NY}} &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + 2\omega_{bc} \wedge \var{V^b} \wedge V^c)
+  \var_V{S_{NY}} &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + 2\omega_{bc} \wedge \var{V^b} \wedge V^c) \\
+  &= -\mathit{nf} \int \dd\phi \wedge \dd(\var{V^a} \wedge V_a) - 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \\
+  &= -\mathit{nf} \int \dd(\var{V^a} \wedge V_a) \wedge \dd\phi - 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \\
+  &= -\mathit{nf} \int \var{V^a} \wedge V_a \wedge \dd^2\phi - 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \\
+  &\text{(integration by parts and dropping the boundary terms)}
 \end{align*}
+The first term ends up being a boundary term due to $\dd^2{\phi}$, so we can drop the term. Therefore:
+\begin{align}
+  \var_V{S_{NY}} &= 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \nonumber \\
+  &= \boxed{-2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge V^c \wedge \var{V^b}}
+\end{align}
 
 \section{Spin Connection}
 \subsection{Einstein-Cartan Action}
@@ -151,7 +160,7 @@ Simplifying:
   &= \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i + \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i \\
   &= 2\epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i
 \end{align*}
-Pluggin this into eq. (13):
+Pluggin this into eq. (14):
 \begin{align*}
   \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{4} \int V^a \wedge V^b \wedge (\epsilon_{abcd}\dd{\var{\omega^{cd}}} + 2\epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i)
 \end{align*}
