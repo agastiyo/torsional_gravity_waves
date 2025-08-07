@@ -136,9 +136,40 @@ which is the exact expression. Plugging this into eq. (12):
 
 \section{Spin Connection}
 \subsection{Einstein-Cartan Action}
+\begin{align}
+  \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{4} \int \epsilon_{abcd}V^a \wedge V^b \wedge \var{R^{cd}} \nonumber \\
+  &= -\frac{M_{Pl}^2}{4} \int \epsilon_{abcd}V^a \wedge V^b \wedge (\dd{\var{\omega^{cd}}} + \var{\omega^c_f} \wedge \omega^{fd} + \omega^c_f \wedge \var{\omega^{fd}}) \nonumber \\
+  &= -\frac{M_{Pl}^2}{4} \int V^a \wedge V^b \wedge (\epsilon_{abcd}\dd{\var{\omega^{cd}}} + \epsilon_{abcd}\var{\omega^c_f} \wedge \omega^{fd} + \epsilon_{abcd}\omega^c_f \wedge \var{\omega^{fd}})
+\end{align}
+Simplifying:
 \begin{align*}
-  \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{4} \int \epsilon_{abcd}V^a \wedge V^b \wedge \var{R^{cd}} \\
-  &= -\frac{M_{Pl}^2}{4} \int \epsilon_{abcd}V^a \wedge V^b \wedge (\dd{\var{\omega^{cd}}} + \var{\omega^c_f} \wedge \omega^{fd} + \omega^c_f \wedge \var{\omega^{fd}}) \\
+  \epsilon_{abcd}&\var{\omega^c_f} \wedge \omega^{fd} + \epsilon_{abcd}\omega^c_f \wedge \var{\omega^{fd}} \\
+  &= \epsilon_{abcd}\var{\omega^c_f} \wedge \eta^{fi}\omega^d_i + \epsilon_{abcd}\omega^c_f \wedge \eta^{fi}\var{\omega^d_i} \\
+  &= \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i - \epsilon_{abcd}\eta^{fi} \var{\omega^d_i} \wedge \omega^c_f \\
+  &\text{(swapping indices $c \leftrightarrow d$ and $f \leftrightarrow i$)} \\
+  &= \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i - \epsilon_{abdc}\eta^{if} \var{\omega^c_f} \wedge \omega^d_i \\
+  &= \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i + \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i \\
+  &= 2\epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i
+\end{align*}
+Pluggin this into eq. (13):
+\begin{align*}
+  \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{4} \int V^a \wedge V^b \wedge (\epsilon_{abcd}\dd{\var{\omega^{cd}}} + 2\epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i)
+\end{align*}
+
+\subsection{Scalar Field}
+$\var_\omega{S_m}$ is trivially $0$.
+
+\subsection{Nieh Yan Term}
+\begin{align*}
+  \var_\omega{S_{NY}} &= -\mathit{nf} \int \dd{\phi} \wedge \var{T^a} \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\phi} \wedge (\var{\omega^a_b} \wedge V^b) \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\phi} \wedge \var{\omega^a_b} \wedge \eta^{bc}V_c \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\phi} \wedge \eta^{bc}\var{\omega^a_b} \wedge V_c \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\phi} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a \\
+\end{align*}
+Antisymmetrizing:
+\begin{align*}
+  \var_\omega{S_{NY}} &= -\frac{\mathit{nf}}{2} \int \dd{\phi} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a
 \end{align*}
 
 \end{document}
