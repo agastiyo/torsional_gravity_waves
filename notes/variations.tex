@@ -125,23 +125,23 @@ Now, focusing on $\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a}$. We can 
 \begin{align*}
   \dd(\var{V^a} \wedge V_a) &= \dd{\var{V^a}} \wedge V_a + (-1)\var{V^a} \wedge \dd{V_a} \\
   &= \dd{\var{V^a}} \wedge V_a - \var{V^a} \wedge \dd{V_a} \\
-  &= \dd{\var{V^a}} \wedge V_a + \dd{V_a} \wedge \var{V^a} \\
-  &= \dd{\var{V^a}} \wedge V_a + \dd{V^a} \wedge \var{V_a} \\
-  &= \var{\dd{V^a}} \wedge V_a + \dd{V^a} \wedge \var{V_a}
+  &= \dd{\var{V^a}} \wedge V_a - \dd{V_a} \wedge \var{V^a} \\
+  &= \dd{\var{V^a}} \wedge V_a - \dd{V^a} \wedge \var{V_a} \\
+  \dd(\var{V^a} \wedge V_a) + \dd{V^a} \wedge \var{V_a} &= \var{\dd{V^a}} \wedge V_a
 \end{align*}
-which is the exact expression. Plugging this into eq. (12):
+Plugging this into eq. (12):
 \begin{align*}
-  \var_V{S_{NY}} &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + 2\omega_{bc} \wedge \var{V^b} \wedge V^c) \\
-  &= -\mathit{nf} \int \dd\phi \wedge \dd(\var{V^a} \wedge V_a) - 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \\
-  &= -\mathit{nf} \int \dd(\var{V^a} \wedge V_a) \wedge \dd\phi - 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \\
-  &= -\mathit{nf} \int \var{V^a} \wedge V_a \wedge \dd^2\phi - 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \\
-  &\text{(integration by parts and dropping the boundary terms)}
+  &\var_V{S_{NY}} \\ &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + \dd{V^a} \wedge \var{V_a} + \dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c) \\
+  &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + 2\dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c)
 \end{align*}
-The first term ends up being a boundary term due to $\dd^2{\phi}$, so we can drop the term. Therefore:
-\begin{align}
-  \var_V{S_{NY}} &= 2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \nonumber \\
-  &= \boxed{-2\mathit{nf} \int \dd\phi \wedge \omega_{bc} \wedge V^c \wedge \var{V^b}}
-\end{align}
+The first term ends up being a boundary term due to, so we can drop the term. Therefore:
+\begin{align*}
+  \var_V{S_{NY}} &= -2\mathit{nf}\int \dd\phi \wedge (\dd V^a \wedge \var{V_a} + \omega_{bc} \wedge \var{V^b} \wedge V^c) \\
+  &= -2\mathit{nf} \int \dd\phi \wedge \dd V^a \wedge \var{V_a} + \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \\
+  &= -2\mathit{nf} \int \dd\phi \wedge \dd V_a \wedge \var{V^a} - \dd\phi \wedge \omega_{bc} \wedge V^c \wedge \var{V^b} \\
+  &= -2\mathit{nf} \int \dd\phi \wedge \dd V_a \wedge \var{V^a} - \dd\phi \wedge \omega_{cb} \wedge V^b \wedge \var{V^c} \\
+  &= \boxed{\int -2\mathit{nf} (\dd\phi \wedge \dd V_a \wedge \var{V^a} + \dd\phi \wedge \omega_{bc} \wedge V^b \wedge \var{V^c})} \\
+\end{align*}
 
 \section{Spin Connection}
 \subsection{Einstein-Cartan Action}
