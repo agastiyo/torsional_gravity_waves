@@ -158,12 +158,18 @@ Simplifying:
   &\text{(swapping indices $c \leftrightarrow d$ and $f \leftrightarrow i$)} \\
   &= \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i - \epsilon_{abdc}\eta^{if} \var{\omega^c_f} \wedge \omega^d_i \\
   &= \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i + \epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i \\
-  &= 2\epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i
+  &= 2\epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i \\
+  &= 2\epsilon_{abcd} \var{\omega^c_f} \wedge \omega^{fd}
 \end{align*}
-Pluggin this into eq. (14):
+Plugging this into eq. (13):
 \begin{align*}
-  \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{4} \int V^a \wedge V^b \wedge (\epsilon_{abcd}\dd{\var{\omega^{cd}}} + 2\epsilon_{abcd}\eta^{fi} \var{\omega^c_f} \wedge \omega^d_i)
+  \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{4} \int V^a \wedge V^b \wedge (\epsilon_{abcd}\dd{\var{\omega^{cd}}} + 2\epsilon_{abcd} \var{\omega^c_f} \wedge \omega^{fd})
 \end{align*}
+We can drop the total derivative:
+\begin{align}
+  \var_\omega{S_{EC}} &= -\frac{M_{Pl}^2}{2} \int \epsilon_{abcd} V^a \wedge V^b \wedge \var{\omega^c_f} \wedge \omega^{fd} \nonumber \\
+  &= \boxed{\frac{M_{Pl}^2}{2} \int \epsilon_{abcd} V^a \wedge V^b \wedge \omega^{fd} \wedge \var{\omega^c_f}}
+\end{align}
 
 \subsection{Scalar Field}
 $\var_\omega{S_m}$ is trivially $0$.
@@ -177,8 +183,10 @@ $\var_\omega{S_m}$ is trivially $0$.
   &= -\mathit{nf} \int \dd{\phi} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a \\
 \end{align*}
 Antisymmetrizing:
-\begin{align*}
-  \var_\omega{S_{NY}} &= -\frac{\mathit{nf}}{2} \int \dd{\phi} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a
-\end{align*}
+\begin{align}
+  \var_\omega{S_{NY}} &= \boxed{-\frac{\mathit{nf}}{2} \int \dd{\phi} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a}
+\end{align}
+
+I am antisymmetrizing here but not when varying $S_{EC}$. This is because in eq. (14), the spin connections are being summed over with each other and the Levi-Civita Symbol, both of which are antisymmetric. In eq. (15), however, the spin connection is being summed over with two Vielbeins which are not antisymmetric, hence the $\frac{1}{2}$ factor must be added.
 
 \end{document}
