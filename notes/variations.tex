@@ -16,7 +16,7 @@ I'll start by considering the total action $S_{tot} = S_{EC} + S_m + S_{NY}$ whe
   S_m &= \frac{1}{2}\int\dd\phi\wedge\hodge\dd\phi \\
   S_{NY} &= -\mathit{nf}\int\dd\phi\wedge T^a \wedge V_a
 \end{align}
-$S_{EC}$ is the Einstein-Cartan gravitational action, $S_m$ is the scalar field , and $S_{NY}$ is the coupling to a Nieh-Yan Form. I'll also define:
+$S_{EC}$ is the Einstein-Cartan gravitational action, $S_m$ is the scalar field action, and $S_{NY}$ is the coupling to a Nieh-Yan Form. I'll also define:
 \begin{align*}
   R^{ab} &= \dd\omega^{ab} + \omega^a_c \wedge \omega^{cb} \\
   T^a &= \dd V^a + \omega^a_b \wedge V^b
@@ -35,7 +35,7 @@ The variation of the total action is
   &= \boxed{\int \frac{M_{Pl}^2}{2} R^{cd} \wedge V^b \epsilon_{abcd} \wedge \var V^a}
 \end{align}
 
-\subsection{Scalar Field}
+\subsection{Scalar Field Action}
 \begin{align}
   \var_V{S_m} &= \frac{1}{2} \int \var\dd\phi \wedge \hodge\dd\phi + \dd\phi \wedge \var\hodge\dd\phi \nonumber \\
   &=  \frac{1}{2} \int \dd\phi \wedge \var\hodge\dd\phi \qquad \text{since } \var_V\dd\phi = 0 
@@ -171,10 +171,10 @@ We can drop the total derivative:
   &= \boxed{\frac{M_{Pl}^2}{2} \int \epsilon_{abcd} V^a \wedge V^b \wedge \omega^{fd} \wedge \var{\omega^c_f}}
 \end{align}
 
-\subsection{Scalar Field}
+\subsection{Scalar Field Action}
 $\var_\omega{S_m}$ is trivially $0$.
 
-\subsection{Nieh Yan Term}
+\subsection{Nieh-Yan Form}
 \begin{align*}
   \var_\omega{S_{NY}} &= -\mathit{nf} \int \dd{\phi} \wedge \var{T^a} \wedge V_a \\
   &= -\mathit{nf} \int \dd{\phi} \wedge (\var{\omega^a_b} \wedge V^b) \wedge V_a \\
@@ -188,5 +188,39 @@ Antisymmetrizing:
 \end{align}
 
 I am antisymmetrizing here but not when varying $S_{EC}$. This is because in eq. (14), the spin connections are being summed over with each other and the Levi-Civita Symbol, both of which are antisymmetric. In eq. (15), however, the spin connection is being summed over with two Vielbeins which are not antisymmetric, hence the $\frac{1}{2}$ factor must be added.
+
+\section{Scalar Field}
+\subsection{Einstein-Cartan Action}
+$\var_\phi{S_{EC}}$ is trivially 0.
+
+\subsection{Scalar Field Action}
+\begin{align}
+  \var_\phi{S_m} &= \frac{1}{2} \int (\var{\dd{\phi}} \wedge \hodge{\dd{\phi}} + \dd{\phi} \wedge \var{\hodge{\dd{\phi}}}) \nonumber \\
+  &= \frac{1}{2} \int (\dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \dd{\phi} \wedge \hodge{\dd(\var{\phi})})
+\end{align}
+We can simplify using the identity $A \wedge \hodge B = B \wedge \hodge A$ when $A$ and $B$ have the same dimension.
+\begin{align*}
+  \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \dd{\phi} \wedge \hodge{\dd(\var{\phi})} &= \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} \\
+  &= 2\dd(\var{\phi}) \wedge \hodge{\dd{\phi}}
+\end{align*}
+Plugging this into eq. (16):
+\begin{align}
+  \var_\phi{S_m} &= \int \dd(\var{\phi}) \wedge \hodge{\dd{\phi}}
+\end{align}
+Using the Leibniz Rule:
+\begin{align*}
+  \dd(\var{\phi} \wedge \hodge{\dd{\phi}}) &= \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \var{\phi} \wedge \dd{\hodge{\dd{\phi}}} \\
+  &= \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \var{\phi}\dd{\hodge{\dd{\phi}}}
+\end{align*}
+Since $\var{\phi}$ is a 0-form, a wedge product with it is the same as regular multiplication. So:
+\begin{align*}
+  \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} &= \dd(\var{\phi} \wedge \hodge{\dd{\phi}}) - \var{\phi}\dd{\hodge{\dd{\phi}}}
+\end{align*}
+Plugging this into eq. (17) and dropping the total derivative:
+\begin{align}
+  \var_\phi{S_m} &= \boxed{- \int \var{\phi}\dd{\hodge{\dd{\phi}}}}
+\end{align}
+
+\subsection{Nieh-Yan Form}
 
 \end{document}
