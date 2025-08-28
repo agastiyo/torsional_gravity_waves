@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage{physics}
+
+\newcommand{\hodge}{{^\star}}
+
+\begin{document}
+\begin{center}
+  \Large\textbf{Equations of Motion from the Action} \\
+  \large\text{8/11/2025}
+\end{center}
+
+From my previous notes, I had calculated the Variations on the total action:
+\begin{align}
+  \var_V{S_{tot}} &= \frac{M_{Pl}^2}{2}\int R^{cd} \wedge V^b \epsilon_{abcd} \wedge \var V^a \nonumber \\ &+ \frac{1}{2} \int (\partial^a\phi \dd\phi \wedge \hodge(V_a \wedge V_b) \wedge \var{V^b} + \partial_b\phi \hodge\dd\phi \wedge \var{V^b}) \nonumber \\ &-2\mathit{nf} \int \dd\phi \wedge \dd V_a \wedge \var{V^a} + \dd\phi \wedge \omega_{bc} \wedge V^b \wedge \var{V^c} \\ \nonumber \\
+  \var_\omega{S_{tot}} &= \frac{M_{Pl}^2}{2} \int \epsilon_{abcd} V^a \wedge V^b \wedge \omega^{fd} \wedge \var{\omega^c_f} + \frac{\mathit{nf}}{2} \int \dd{\phi} \wedge V_a \wedge V_c \wedge \var{\omega^{ac}} \\ \nonumber \\
+  \var_\phi{S_{tot}} &= - \int \var{\phi}\dd{\hodge{\dd{\phi}}} + \mathit{nf} \int \dd(T^a \wedge V_a) \wedge \var{\phi}
+\end{align}
+\section{Vielbein}
+\begin{align*}
+  \int \frac{M_{Pl}^2}{2}R^{cd} \wedge V^b \epsilon_{abcd} \wedge \var V^a + \frac{1}{2}(\partial^a\phi \dd\phi \wedge \hodge(V_a \wedge V_b) \wedge \var{V^b} + \partial_b\phi \hodge\dd\phi \wedge \var{V^b}) \\ - 2\mathit{nf}(\dd\phi \wedge \dd V_a \wedge \var{V^a} + \dd\phi \wedge \omega_{bc} \wedge V^b \wedge \var{V^c}) = 0
+\end{align*}
+Relabeling indices:
+\begin{align*}
+  \int \frac{M_{Pl}^2}{2}R^{cd} \wedge V^b \epsilon_{abcd} \wedge \var V^a + \frac{1}{2}(\partial^b\phi \dd\phi \wedge \hodge(V_b \wedge V_a) \wedge \var{V^a} + \partial_a\phi \hodge\dd\phi \wedge \var{V^a}) \\ - 2\mathit{nf}(\dd\phi \wedge \dd V_a \wedge \var{V^a} + \dd\phi \wedge \omega_{ba} \wedge V^b \wedge \var{V^a}) = 0 \\
+  \int \frac{M_{Pl}^2}{2}R^{cd} \wedge V^b \epsilon_{abcd} \wedge \var V^a + \frac{1}{2}(\partial^b\phi \dd\phi \wedge \hodge(V_b \wedge V_a) + \partial_a\phi \hodge\dd\phi) \wedge \var{V^a} \\ - 2\mathit{nf}(\dd\phi \wedge \dd V_a + \dd\phi \wedge \omega_{ba} \wedge V^b) \wedge \var{V^a} = 0 \\
+  \int (\frac{M_{Pl}^2}{2}R^{cd} \wedge V^b \epsilon_{abcd} + \frac{1}{2}(\partial^b\phi \dd\phi \wedge \hodge(V_b \wedge V_a) + \partial_a\phi \hodge\dd\phi) \\ - 2\mathit{nf}(\dd\phi \wedge \dd V_a + \dd\phi \wedge \omega_{ba} \wedge V^b)) \wedge \var{V^a} = 0 \\
+\end{align*}
+Since $\var{V^a}$ is arbitrary:
+\begin{align}
+  \frac{M_{Pl}^2}{2}R^{cd} \wedge V^b \epsilon_{abcd} + \frac{1}{2}(\partial^b\phi \dd\phi \wedge \hodge(V_b \wedge V_a) + \partial_a\phi \hodge\dd\phi) \nonumber \\ - 2\mathit{nf}(\dd\phi \wedge \dd V_a + \dd\phi \wedge \omega_{ba} \wedge V^b) = 0
+\end{align}
+so, the Equation of Motion:
+\begin{align}
+  \frac{M_{Pl}^2}{2}R^{cd} \wedge V^b \epsilon_{abcd} - 2\mathit{nf}(\dd\phi \wedge \dd V_a + \dd\phi \wedge \omega_{ba} \wedge V^b) \nonumber \\ = - \frac{1}{2}(\partial^b\phi \dd\phi \wedge \hodge(V_b \wedge V_a) + \partial_a\phi \hodge\dd\phi)
+\end{align}
+
+\section{Spin Connection}
+\begin{align*}
+  \int \frac{M_{Pl}^2}{2} \epsilon_{abcd} V^a \wedge V^b \wedge \omega^{fd} \wedge \var{\omega^c_f} + \int \frac{\mathit{nf}}{2} \dd{\phi} \wedge V_a \wedge V_c \wedge \var{\omega^{ac}} = 0
+\end{align*}
+
+\section{Scalar Field}
+\begin{align*}
+  - \int \var{\phi}\dd{\hodge{\dd{\phi}}} + \mathit{nf} \int \dd(T^a \wedge V_a) \wedge \var{\phi} = 0
+\end{align*}
+
+\end{document} 
