@@ -36,6 +36,9 @@ literature/
 # Ignore the Code Folder FOR NOW
 code/
 
+# Ignore the notebooks folder
+nbs/
+
 # -----------------------------------
 # Markdown tools output (ignore)
 # -----------------------------------
