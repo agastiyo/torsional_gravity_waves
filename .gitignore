@@ -1,74 +1,14 @@
-# -----------------------------------
-# LaTeX build artifacts to ignore
-# -----------------------------------
-*.aux
-*.bbl
-*.blg
-*.brf
-*.idx
-*.ilg
-*.ind
-*.lof
-*.log
-*.lot
-*.nav
-*.out
-*.snm
-*.synctex.gz
-*.toc
-*.fdb_latexmk
-*.fls
-*.xdv
-*.run.xml
-*.bcf
-
-# TeX editor artifacts
-*.synctex.gz(busy)
-*.backup
-*~
-
 # VS Code project settings
 .vscode/
 
 # Ignore the Literature Folder
 literature/
 
-# Ignore the Code Folder FOR NOW
-code/
-
 # Ignore the notebooks folder
 nbs/
 
-# -----------------------------------
-# Markdown tools output (ignore)
-# -----------------------------------
-*.html
-*.svg
-*.docx
-*.epub
-*.mobi
-
-# -----------------------------------
-# Allow source files
-# -----------------------------------
-!*.tex       # Allow LaTeX source
-!*.md        # Allow Markdown
-!*.nb        # Allow Mathematica notebooks
-
-# -----------------------------------
-# Mathematica artifacts to ignore
-# -----------------------------------
-*.nb~
-*.mx
-*.ma
-*.mb
-*.bak
-*.tmp
-*.nb-autosave
-*.wl-autosave
-*.nb.bak
-*.nb.tmp
-*.wl-init
+# Ignore latex output files
+notes/output/
 
 # -----------------------------------
 # macOS system files
