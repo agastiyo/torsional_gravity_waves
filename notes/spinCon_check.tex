@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+
+\usepackage{physics}
+
+\begin{document}
+
+\begin{center}
+  \Large\textbf{Spin Connection Check} \\
+  \large\text{10/01/2025}
+\end{center}
+
+Metric and Vielbeins from "Vielbein of the General Schwarzchild Metric" (8/7/2025).
+
+Writing the metric in coordinates $x^\mu = \left(r,\theta,\phi,\tau\right)$:
+
+\begin{align*}
+  g_{\mu\nu} &=
+  \begin{pmatrix}
+    e^{\lambda\left(\tau,r\right)} & 0 & 0 & 0 \\
+    0 & r^{2} & 0 & 0 \\
+    0 & 0 & r^{2}\sin^{2}\theta & 0 \\
+    0 & 0 & 0 & -e^{\nu\left(\tau,r\right)} \\
+  \end{pmatrix}
+\end{align*}
+
+Needed Vielbeins in the same coordinates:
+
+\begin{align*}
+  e^{A}{}_{\mu} &=
+  \begin{pmatrix}
+    e^{\lambda/2} & 0 & 0 & 0 \\
+    0 & r & 0 & 0 \\
+    0 & 0 & r\sin\theta & 0 \\
+    0 & 0 & 0 & e^{\nu/2} \\
+  \end{pmatrix} \\
+  e_{A}{}^{\mu} &=
+  \begin{pmatrix}
+    e^{-\lambda/2} & 0 & 0 & 0 \\
+    0 & \frac{1}{r} & 0 & 0 \\
+    0 & 0 & \frac{1}{r\sin\theta} & 0 \\
+    0 & 0 & 0 & e^{-\nu/2} \\
+  \end{pmatrix}
+\end{align*}
+
+Equation for the spin connection:
+
+\begin{align*}
+  \omega_{\nu}{}^{AB} = e^{A}{}_{\mu}\left(\partial_{\nu} e^{B\mu}+\Gamma^{\mu}{}_{\sigma\nu}\,e^{B\sigma}\right)
+\end{align*}
+
+So:
+
+\begin{align*}
+  \omega_{r}{}^{11}
+  &= e^{1}{}_{r}\left(\partial_{r} e^{1 r}+\Gamma^{r}{}_{r r} e^{1 r}\right) \\ \text{where} \\
+  e^{1}{}_{r} &= e^{\lambda/2} \\
+  e^{1 r} &= e^{-\lambda/2} \\
+  \Gamma^{r}{}_{r r} &= \tfrac{1}{2}\,\partial_{r}\lambda\left(\tau,r\right) \text{from the EOM notebook}
+\end{align*}
+
+Solving components:
+
+\begin{align*}
+\partial_{r} e^{1 r} &= -\tfrac{1}{2}\,\lambda_{r}\,e^{-\lambda/2} \\
+\Gamma^{r}{}_{r r} e^{1 r} &= \tfrac{1}{2}\,\lambda_{r}\,e^{-\lambda/2}.
+\end{align*}
+
+Finally:
+
+\begin{align*}
+\omega_{r}{}^{11}
+= e^{\lambda/2}\left(-\tfrac{1}{2}\lambda_{r}e^{-\lambda/2}
++\tfrac{1}{2}\lambda_{r}e^{-\lambda/2}\right)=\boxed{0}
+\end{align*}
+
+
+\end{document}
