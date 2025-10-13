@@ -4,7 +4,7 @@
 \begin{document}
 
 \begin{center}
-  \Large\textbf{Equations of Motion} \\
+  \Large\textbf{Friedman Equations of Motion} \\
   \large\text{10/7/2025}
 \end{center}
 
@@ -13,7 +13,7 @@ The original form of the equations from the mathematica notebook are given along
 \section*{Eq.1}
 
 \begin{align*}
-& -2r^2 \sin\theta \left( h' - 2n_f \,(f^{11} + \phi)\, \vartheta_0' \right)
+& -2r^2 \sin\theta \left( h' - 2nf \,(f^{11} + \phi)\, \vartheta_0' \right)
 +\tfrac{1}{4} e^{\frac{1}{2}\nu - \lambda}
 \\ &\Big(
  e^{\lambda} \big(
@@ -37,7 +37,7 @@ The original form of the equations from the mathematica notebook are given along
 
 Simplified:
 \begin{align*}
-& -4r^2 \sin\theta \left(n_f\phi\vartheta_0' \right)
+& -4r^2 \sin\theta \left(nf\phi\vartheta_0' \right)
 +\tfrac{e^{\frac{\nu}{2} - \lambda}}{4}
 \Big(
  e^{\lambda} \big(
@@ -55,7 +55,7 @@ Simplified:
 
 Finally:
 \begin{align*}
--8r^2 \left(n_f\phi\vartheta_0' \right)
+-8r^2 \left(nf\phi\vartheta_0' \right)
 +2e^{\frac{\nu}{2} - \lambda}
 \Big( e^{\lambda} \big(r^2\phi^2 - 1 \big) + r\nu_{r} + 1\Big)
 = r^2 \, e^{-\frac{\nu}{2}}(\vartheta_0')^2
@@ -75,7 +75,7 @@ Finally:
  \big) \\
  &- f^{13} \sin\theta\, e^{\frac{\nu - \lambda}{2}}
  - r \sin\theta \big(
-     (h^{12})' - 8n_f f^{12} \vartheta_0'
+     (h^{12})' - 8nf f^{12} \vartheta_0'
    \big)
 \Big] = 0
 \end{align*}
@@ -99,7 +99,7 @@ Simplified:
  \big) \\
  &+ f^{12} \sin\theta\, e^{\frac{\nu - \lambda}{2}}
  - r \sin\theta \big(
-     (h^{13})' - 8n_f f^{13} \vartheta_0'
+     (h^{13})' - 8nf f^{13} \vartheta_0'
    \big)
 \Big] = 0
 \end{align*}
@@ -121,7 +121,7 @@ Simplified:
        + f^{13}h^{12}
      \big]
  \big) \\
- &- 8n_f r\, h^{23} \sin\theta\, \vartheta_0'
+ &- 8nf r\, h^{23} \sin\theta\, \vartheta_0'
  + 4 e^{-\frac{1}{2}\lambda} \sin\theta\, e^{\frac{1}{2}\nu}\, r h
    (\nu_r + \lambda_\tau)
 \Big] = 0
@@ -144,7 +144,7 @@ Simplified:
        - f^{13} f^{23}
      \big)
      + (h^{12})'
-     + 8n_f f^{12} \vartheta_0'
+     + 8nf f^{12} \vartheta_0'
      + h^{12} \lambda_\tau
    \Big)
 \Big] \\ &= 0
@@ -177,7 +177,7 @@ Simplified:
  & - 4 e^{\frac{\nu}{2}} r \sin\theta
    \Big(
      2h'
-     - 4n_f (f^{22} + \phi)\vartheta_0'
+     - 4nf (f^{22} + \phi)\vartheta_0'
      + h\lambda_\tau
    \Big) \\
  &- r \sin\theta
@@ -200,7 +200,7 @@ Simplified:
    \left( \lambda_r - \nu_r \right) \left(2 + r\nu_r\right) \\
  & - 2r (\nu_r)_r\\
  & + 4 e^{\lambda} e^{\nu} r\phi^2 \sin\theta \\
- & + 16 e^{\frac{\nu}{2}} r n_f\phi\vartheta_0' \sin\theta\\
+ & + 16 e^{\frac{\nu}{2}} r nf\phi\vartheta_0' \sin\theta\\
  & - r \sin\theta
    \Big[
      (\lambda_\tau)_\tau
@@ -218,7 +218,7 @@ e^{-\frac{\lambda + \nu}{2}} \Big[
  &- \frac{e^{\nu}}{2} \left( \lambda_r - \nu_r \right) \left(\frac{2}{r} + \nu_r\right)
  - \frac{(\nu_r)_r}{\sin\theta} \\
  &+ 2 e^{\lambda} e^{\nu} \phi^2
- + 8 e^{\frac{\nu}{2}} n_f\phi\vartheta_0'
+ + 8 e^{\frac{\nu}{2}} nf\phi\vartheta_0'
  - \frac{(\lambda_\tau)_\tau}{2} + \frac{\lambda_\tau \nu_\tau}{2} -(\lambda_\tau)_\tau
 \Big] = e^\frac{\lambda - \nu}{2} (\vartheta_0')^2
 \end{align*}
@@ -245,7 +245,7 @@ e^{-\frac{\lambda + \nu}{2}} \Big[
  & \quad - r \sin\theta
        \big[
          2(h^{23})'
-         - 16n_f f^{23}\vartheta_0'
+         - 16nf f^{23}\vartheta_0'
          + h^{23}\lambda_\tau
        \big]
    \Big)
@@ -275,7 +275,7 @@ Finally:
        - f^{12}h^{23}
        - f^{23}h^{12}
      \big] \\
-     & \quad + 8n_f\,h^{13}\,\vartheta_0'
+     & \quad + 8nf\,h^{13}\,\vartheta_0'
      - f^{13}\lambda_\tau
    \Big)
 \Big] = 0
@@ -297,7 +297,7 @@ Simplified:
        2h\,h^{13} - f^{12} f^{23} + f^{13}(f^{22} + \phi)
      \big) \\
      & \quad + (h^{13})'
-     + 8 n_f f^{13} \vartheta_0'
+     + 8 nf f^{13} \vartheta_0'
      + h^{13} \lambda_\tau
    \Big)
 \Big] = 0
@@ -320,7 +320,7 @@ Simplified:
        -2 h\, h^{23} - f^{23}(f^{11} + \phi) + f^{12} f^{13}
      \Big) \\
      & \quad + 2 (h^{23})'
-     + 16 n_f f^{23} \vartheta_0'
+     + 16 nf f^{23} \vartheta_0'
      + h^{23} \lambda_\tau
    \Big)
 \Big] = 0
@@ -360,7 +360,7 @@ Finally:
    \Big) \\
  & - 4 e^{\lambda + \frac{\nu}{2}} r
    \Big(
-     2 h' - 4 n_f (f^{33} + \phi) \vartheta_0' + h\lambda_\tau
+     2 h' - 4 nf (f^{33} + \phi) \vartheta_0' + h\lambda_\tau
    \Big) \\
  & - e^{\lambda} r
    \Big[
@@ -380,7 +380,7 @@ Simplified:
      - 4e^{\lambda}\phi^2 - 2 \lambda_r + 2 \nu_r 
       + r ( - \lambda_r \nu_r + (\nu_r)^2 + 2 (\nu_r)_r )
    \Big) \\
- & + 16 n_f \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' \\
+ & + 16 nf \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' \\
 & - e^{\lambda}
    (
      \left(\lambda_\tau\right)^2
@@ -398,7 +398,7 @@ e^{-\frac{\lambda + \nu}{2}} \Big[
      - 2e^{\lambda}\phi^2 - \lambda_r + \nu_r 
       + \frac{r}{2} ( - \lambda_r \nu_r + (\nu_r)^2 + 2 (\nu_r)_r )
    \Big) \\
- & + 8 n_f \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' - \frac{e^{\lambda}}{2} (\left(\lambda_\tau\right)^2 - \lambda_\tau \nu_\tau + 2 (\lambda_\tau)_\tau)
+ & + 8 nf \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' - \frac{e^{\lambda}}{2} (\left(\lambda_\tau\right)^2 - \lambda_\tau \nu_\tau + 2 (\lambda_\tau)_\tau)
 \Big] = e^\frac{\lambda - \nu}{2}(\vartheta_0')^2
 \end{align*}
 
@@ -413,7 +413,7 @@ e^{-\frac{\lambda + \nu}{2}} \Big[
        + f^{13} h^{23}
        - f^{23} h^{13}
      \big] \\
-   & \quad - 8 n_f \, h^{12} \vartheta_0'
+   & \quad - 8 nf \, h^{12} \vartheta_0'
    + f^{12}\lambda_\tau
  \Big)
 \Big] = 0
@@ -554,52 +554,152 @@ e^{\lambda-\nu} (\vartheta_0')^2
 
 \section*{List of Equations}
 
-\begin{align*}
--8r^2 \left(n_f\phi\vartheta_0' \right)
+\begin{align}
+-8r^2 \left(nf\phi\vartheta_0' \right)
 +2e^{\frac{\nu}{2} - \lambda}
 \Big( e^{\lambda} \big(r^2\phi^2 - 1 \big) + r\nu_{r} + 1\Big)
 = r^2 \, e^{-\frac{\nu}{2}}(\vartheta_0')^2
-\end{align*}
+\end{align}
 
-\begin{align*}
+\begin{align}
 e^{-\frac{\lambda + \nu}{2}} \Big[
  &- \frac{e^{\nu}}{2} \left( \lambda_r - \nu_r \right) \left(\frac{2}{r} + \nu_r\right)
- - \frac{(\nu_r)_r}{\sin\theta} \\
+ - \frac{(\nu_r)_r}{\sin\theta} \nonumber \\
  &+ 2 e^{\lambda} e^{\nu} \phi^2
- + 8 e^{\frac{\nu}{2}} n_f\phi\vartheta_0'
+ + 8 e^{\frac{\nu}{2}} nf\phi\vartheta_0'
  - \frac{(\lambda_\tau)_\tau}{2} + \frac{\lambda_\tau \nu_\tau}{2} -(\lambda_\tau)_\tau
 \Big] = e^\frac{\lambda - \nu}{2} (\vartheta_0')^2
-\end{align*}
+\label{eq:2}
+\end{align}
 
-\begin{align*}
+\begin{align}
 - \frac{r \phi \nu_r}{2} e^{\frac{\nu}{2}} \sin\theta &= 0
-\end{align*}
+\label{eq:3}
+\end{align}
 
-\begin{align*}
+\begin{align}
 \frac{r\phi\nu_r}{2} e^{\frac{\nu}{2}} = 0
-\end{align*}
+\label{eq:4}
+\end{align}
 
-\begin{align*}
+\begin{align}
 e^{-\frac{\lambda + \nu}{2}} \Big[
  & e^{\nu} \Big(
      - 2e^{\lambda}\phi^2 - \lambda_r + \nu_r 
       + \frac{r}{2} ( - \lambda_r \nu_r + (\nu_r)^2 + 2 (\nu_r)_r )
-   \Big) \\
- & + 8 n_f \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' - \frac{e^{\lambda}}{2} (\left(\lambda_\tau\right)^2 - \lambda_\tau \nu_\tau + 2 (\lambda_\tau)_\tau)
+   \Big) \nonumber \\
+ & + 8 nf \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' - \frac{e^{\lambda}}{2} (\left(\lambda_\tau\right)^2 - \lambda_\tau \nu_\tau + 2 (\lambda_\tau)_\tau)
 \Big] = e^\frac{\lambda - \nu}{2}(\vartheta_0')^2
-\end{align*}
+\label{eq:5}
+\end{align}
 
-\begin{align*}
+\begin{align}
 - r \lambda_\tau e^{-\frac{\nu}{2}}\sin\theta = 0
-\end{align*}
+\end{align}
 
-\begin{align*}
+\begin{align}
 2 
 \Big(
   e^{\lambda}(3r^2\phi^2 - 1) - r\lambda_r + 1
 \Big)
 = - r^2 
 e^{\lambda-\nu} (\vartheta_0')^2
+\end{align}
+
+Looking at eq.3 and eq.4, we know exponential and sinusoidal terms cannot equal zero. Furthermore, $r$ and $\phi$ are coordinates. Therefore, both equations yield:
+
+\begin{align}
+  \nu_r = 0
+\end{align}
+
+In the same vein, eq.6 yields:
+
+\begin{align}
+  \lambda_\tau = 0
+\end{align}
+
+These constraints are consistent with the General Schwarzchild metric:
+\begin{align*}
+  \dd{s^2} = -e^{\nu(t,r)}\dd{t^2} + e^{\lambda(t,r)}\dd{r^2} + r^2\dd{\theta^2} + r^2\sin^2{\theta}\dd{\phi^2}
 \end{align*}
+
+Simplifying the equations even further, we are left with:
+
+\begin{align}
+-8r^2 \left(nf\phi\vartheta_0' \right)
++2e^{\frac{\nu}{2} - \lambda}
+\Big( e^{\lambda} \big(r^2\phi^2 - 1 \big) + 1\Big)
+= r^2 \, e^{-\frac{\nu}{2}}(\vartheta_0')^2
+\end{align}
+
+\begin{align}
+e^{-\frac{\lambda + \nu}{2}} \Big[
+ &- \frac{e^{\nu}\lambda_r}{r} + 2 e^{\lambda} e^{\nu} \phi^2
+ + 8 e^{\frac{\nu}{2}} nf\phi\vartheta_0'
+\Big] = e^\frac{\lambda - \nu}{2} (\vartheta_0')^2
+\end{align}
+
+\begin{align}
+e^{-\frac{\lambda + \nu}{2}} \Big[
+ & e^{\nu} \Big(
+     - 2e^{\lambda}\phi^2 - \lambda_r
+   \Big) + 8 nf \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0'
+\Big] = e^\frac{\lambda - \nu}{2}(\vartheta_0')^2
+\end{align}
+
+\begin{align}
+2 
+\Big(
+  e^{\lambda}(3r^2\phi^2 - 1) - r\lambda_r + 1
+\Big)
+= - r^2 
+e^{\lambda-\nu} (\vartheta_0')^2
+\end{align}
+
+Simplifying eq.10:
+
+\begin{align*}
+  -8r^2 \left(nf\phi\vartheta_0' \right) +2e^{\frac{\nu}{2} - \lambda} \Big( e^{\lambda} \big(r^2\phi^2 - 1 \big) + 1\Big) &= r^2 \, e^{-\frac{\nu}{2}}(\vartheta_0')^2 \\
+  2e^{\frac{\nu}{2} - \lambda} \Big( e^{\lambda} \big(r^2\phi^2 - 1 \big) + 1\Big) &= r^2 \, e^{-\frac{\nu}{2}}(\vartheta_0')^2 + 8r^2 \left(nf\phi\vartheta_0' \right) \\
+  2e^{\frac{\nu}{2} - \lambda} \Big( e^{\lambda} \big(\phi^2 - \frac{1}{r^2} \big) + \frac{1}{r^2}\Big) &= e^{-\frac{\nu}{2}}(\vartheta_0')^2 + 8 nf\phi\vartheta_0'
+\end{align*}
+
+Next, eq.11 and eq.12 can be equated:
+
+\begin{align*}
+  e^{-\frac{\lambda + \nu}{2}} \Big[ - \frac{e^{\nu}\lambda_r}{r} + 2 e^{\lambda} e^{\nu} \phi^2 + 8 e^{\frac{\nu}{2}} nf\phi\vartheta_0' \Big] &= \\ e^{-\frac{\lambda + \nu}{2}} &\Big[ e^{\nu} \Big( - 2e^{\lambda}\phi^2 - \lambda_r \Big) + 8 nf \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' \Big] \\ \\
+  - \frac{e^{\nu}\lambda_r}{r} + 2 e^{\lambda} e^{\nu} \phi^2 + 8 e^{\frac{\nu}{2}} nf\phi\vartheta_0' &=  e^{\nu} \Big( - 2e^{\lambda}\phi^2 - \lambda_r \Big) + 8 nf \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' \\
+  - \frac{e^{\nu}\lambda_r}{r} + 2 e^{\lambda} e^{\nu} \phi^2 + 8 e^{\frac{\nu}{2}} nf\phi\vartheta_0' &=  - 2e^{\nu}e^{\lambda}\phi^2 - e^{\nu}\lambda_r + 8 nf \phi e^{\lambda + \frac{\nu}{2}} \vartheta_0' \\
+  -e^{\nu}\lambda_r \left(\frac{1}{r} - 1 \right) + 4 e^{\lambda + \nu}\phi^2 &= 8nf\phi\vartheta_0' \left(e^{\lambda + \frac{\nu}{2}} -  e^{\frac{\nu}{2}}\right) \\
+  \lambda_r \left(\frac{1}{r} - 1 \right) &= 4 e^{\lambda}\phi^2 - 8nf\phi\vartheta_0' \frac{\left(e^{\lambda + \frac{\nu}{2}} -  e^{\frac{\nu}{2}}\right)}{e^{\nu}}
+\end{align*}
+
+Simplifying the exponents:
+
+\begin{align*}
+  \lambda_r \left(\frac{1}{r} - 1 \right) &= 4 e^{\lambda}\phi^2 - 8nf\phi\vartheta_0' \left(e^{\lambda - \frac{\nu}{2}} -  e^{-\frac{\nu}{2}}\right) \\
+  \lambda_r \left(\frac{1}{r} - 1 \right) &= 4 e^{\lambda}\phi^2 - 8nf\phi\vartheta_0' e^{-\frac{\nu}{2}}\left(e^{\lambda} -  1\right)
+\end{align*}
+
+Moving on to eq.13:
+
+\begin{align*}
+  2 \Big( e^{\lambda}(3r^2\phi^2 - 1) - r\lambda_r + 1 \Big) &= - r^2 e^{\lambda-\nu} (\vartheta_0')^2 \\
+  e^{\lambda}(3r^2\phi^2 - 1) - r\lambda_r + 1 &= - \frac{1}{2} r^2 e^{\lambda-\nu} (\vartheta_0')^2
+\end{align*}
+
+\textbf{Therefore, the final equations of motion are:}
+
+\begin{equation}
+  2e^{\frac{\nu}{2} - \lambda} \Big( e^{\lambda} \big(\phi^2 - \frac{1}{r^2} \big) + \frac{1}{r^2}\Big) = e^{-\frac{\nu}{2}}(\vartheta_0')^2 + 8 nf\phi\vartheta_0'
+\end{equation}
+
+\begin{equation}
+  \lambda_r \left(\frac{1}{r} - 1 \right) = 4 e^{\lambda}\phi^2 - 8nf\phi\vartheta_0' e^{-\frac{\nu}{2}}\left(e^{\lambda} -  1\right)
+\end{equation}
+
+\begin{equation}
+  e^{\lambda}(3r^2\phi^2 - 1) - r\lambda_r + 1 = - \frac{1}{2} r^2 e^{\lambda-\nu} (\vartheta_0')^2
+\end{equation}
 
 \end{document}
