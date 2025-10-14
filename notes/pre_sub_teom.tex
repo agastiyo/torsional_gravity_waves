@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{physics}
+
+\begin{document}
+
+\begin{center}
+  \Large\textbf{Torsion EOMs before substitution} \\
+  \large\text{10/13/2025}
+\end{center}
+
+Below are the Torsional Equations of Motion in the first half of the mathematica notebook. Only terms with both a left hand and right hand side are included. The rest of the Torsion EOMs trivially show $h=0$, $h^{ij} = 0$, $f^{ij} = 0$. Further proof for this is in Adshead Appendix A.
+
+\begin{align}
+2nf r e^{\lambda/2} \vartheta_0' &= -2r (f^{33} + \phi) e^{(\lambda + \nu)/2} \nonumber \\
+nf \vartheta_0' &= -(f^{33} + \phi) e^{\nu/2} \nonumber \\
+nf \vartheta_0' &= -\phi e^{\nu/2} \nonumber \\
+-e^{-\nu/2} nf \vartheta_0' &= \phi
+\end{align}
+
+\begin{align}
+-2nf r \sin\theta e^{\lambda/2} \vartheta_0' &= 2r \sin\theta (f^{22} + \phi) e^{(\lambda + \nu)/2} \nonumber \\
+-nf \vartheta_0' &= (f^{22} + \phi) e^{\nu/2} \nonumber \\
+-nf \vartheta_0' &= \phi e^{\nu/2} \nonumber \\
+-e^{-\nu/2} nf \vartheta_0' &= \phi
+\end{align}
+
+\begin{align}
+-2nf r e^{\lambda/2} \vartheta_0' &= 2r (f^{33} + \phi) e^{(\lambda + \nu)/2} \nonumber \\
+-nf \vartheta_0' &= (f^{33} + \phi) e^{\nu/2} \nonumber \\
+-nf \vartheta_0' &= \phi e^{\nu/2} \nonumber \\
+-e^{-\nu/2} nf \vartheta_0' &= \phi
+\end{align}
+
+\begin{align}
+2nf r^2 \sin\theta \vartheta_0' &= -2r^2 \sin\theta (f^{11} + \phi) e^{\nu/2} \nonumber \\
+nf \vartheta_0' &= - (f^{11} + \phi) e^{\nu/2} \nonumber \\
+- nf \vartheta_0' &= \phi e^{\nu/2} \nonumber \\
+-e^{-\nu/2} nf \vartheta_0' &= \phi
+\end{align}
+
+\begin{align}
+2nf r \sin\theta e^{\lambda/2} \vartheta_0' &= -2r \sin\theta (f^{22} + \phi) e^{(\lambda + \nu)/2} \nonumber \\
+nf \vartheta_0' &= -(f^{22} + \phi) e^{\nu/2} \nonumber \\
+-nf \vartheta_0' &= \phi e^{\nu/2} \nonumber \\
+-e^{-\nu/2} nf \vartheta_0' &= \phi
+\end{align}
+
+\begin{align}
+-2 n f r^2 \sin\theta \vartheta_0' &= 2 r^2 \sin\theta (f^{11} + \phi) e^{\nu/2} \nonumber \\
+-n f \vartheta_0' &= (f^{11} + \phi) e^{\nu/2} \nonumber \\
+-n f \vartheta_0' &= \phi e^{\nu/2} \nonumber \\
+-e^{-\nu/2}n f \vartheta_0' &= \phi
+\end{align}
+
+In all cases, $\phi$ simplifies to the same form:
+
+\begin{equation}
+  \phi = -e^{-\nu/2}n f \vartheta_0'
+\end{equation}
+
+Using this and $h=0$, $h^{ij} = 0$, and $f^{ij} = 0$, the Torsion EOMs and Friedman EOMs can be recalculated with greater brevity in the notebook.
+
+\end{document}
