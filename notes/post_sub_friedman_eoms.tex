@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{physics}
+
+\begin{document}
+\begin{center}
+  \Large\textbf{Friedman Equations of Motion after substitution} \\
+  \large\text{10/13/2025}
+\end{center}
+
+After substituting the known form of $\phi$ from the pre-substitution TEOM notes as well as the other constraints, the Friedman EOMs have been recalculated. $V=0$ is enforced now. The equations are presented:
+
+\section*{Equation 1}
+
+\begin{align*}
+\sin\theta &\Big(
+  4 n f r^2 \, \vartheta_0' 
+  \, n f \, \vartheta_0' (- e^{-\nu/2}) \\
+  & \qquad + e^{\nu/2 - \lambda} \Big(
+      1 + r \, \nu_r + e^{\lambda} \big( r^2 ((n f \, \vartheta_0' (- e^{-\nu/2}))^2 - 0^2) - 1 \big)
+    \Big)
+\Big) \\
+& = \frac{1}{2} r^2 \sin\theta \, e^{-\lambda/2 - \nu} \sqrt{e^{\lambda+\nu}} \Big( 2 V(\vartheta_0) e^{\nu} + (\vartheta_0')^2 \Big)  \\  \\
+&4 n^2 f^2 r^2
+  \, (\vartheta_0')^2 (- e^{-\nu/2})  \\
+  & \qquad + e^{\nu/2 - \lambda} \Big(
+      1 + r \, \nu_r + e^{\lambda} \big( r^2 ((n f \, \vartheta_0' (- e^{-\nu/2}))^2) - 1 \big)
+    \Big) \\
+& = \frac{1}{2} r^2 e^{-\nu/2} (\vartheta_0')^2  \\  \\
+&-8 n^2 f^2 r^2
+  \, (\vartheta_0')^2 \\
+  & \qquad + 2e^{\nu - \lambda} \Big(
+      1 + r \, \nu_r + e^{\lambda} \big( r^2 ((n f \, \vartheta_0' (- e^{-\nu/2}))^2) - 1 \big)
+    \Big) \\
+& = r^2 (\vartheta_0')^2 
+\end{align*}
+
+Focusing specifically on this term:
+\begin{align*}
+  &2e^{\nu - \lambda} \Big(
+      1 + r \, \nu_r + e^{\lambda} \big( r^2 ((n f \, \vartheta_0' (- e^{-\nu/2}))^2) - 1 \big)
+    \Big) \\
+  &2e^{\nu - \lambda} + 2e^{\nu - \lambda}r \nu_r + 2e^{\nu} \big( r^2 n^2 f^2 \, (\vartheta_0')^2 (- e^{-\nu}) - 1 \big) \\
+  &2e^{\nu - \lambda} + 2e^{\nu - \lambda}r \nu_r - 2 r^2 n^2 f^2 \, (\vartheta_0')^2 - 2e^{\nu}
+\end{align*}
+
+Substituting back into the equation:
+
+\begin{align}
+  -8 n^2 f^2 r^2 (\vartheta_0')^2 + 2e^{\nu - \lambda} + 2e^{\nu - \lambda}r \nu_r &- 2 r^2 n^2 f^2 \, (\vartheta_0')^2 - 2e^{\nu} = r^2 (\vartheta_0')^2 \nonumber \\
+  -10 n^2 f^2 r^2 (\vartheta_0')^2 + 2e^{\nu - \lambda} &+ 2e^{\nu - \lambda}r \nu_r - 2e^{\nu} = r^2 (\vartheta_0')^2 \nonumber \\
+  2e^{\nu - \lambda} + 2e^{\nu - \lambda}r \nu_r - 2e^{\nu} &= r^2 (\vartheta_0')^2 + 10 n^2 f^2 r^2 (\vartheta_0')^2 \nonumber \\ \nonumber \\
+  2e^{\nu} \left(e^{-\lambda} + e^{-\lambda}r \nu_r - 1\right) &= \left(1 + 10 n^2 f^2\right) r^2 (\vartheta_0')^2
+\end{align}
+
+
+\end{document}
