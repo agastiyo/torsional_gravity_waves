@@ -7,7 +7,7 @@
   \large\text{10/13/2025}
 \end{center}
 
-After substituting the known form of $\phi$ from the pre-substitution TEOM notes as well as the other constraints, the Friedman EOMs have been recalculated. $V=0$ is enforced now. The equations are presented:
+After substituting the known form of $\phi$ from the pre-substitution TEOM notes as well as the other constraints, the Friedman EOMs have been recalculated. $V(\vartheta_0)=0$ is enforced now. The equations are presented:
 
 \section*{Equation 1}
 
@@ -52,5 +52,114 @@ Substituting back into the equation:
   2e^{\nu} \left(e^{-\lambda} + e^{-\lambda}r \nu_r - 1\right) &= \left(1 + 10 n^2 f^2\right) r^2 (\vartheta_0')^2
 \end{align}
 
+\section*{Equation 2}
+
+\begin{align}
+  e^{-\lambda/2} r \sin\theta \left(e^{\nu/2}r(0)(\nu_r) + \lambda_\tau \right) &= 0 \nonumber \\
+  e^{-\lambda/2} r \sin\theta (\lambda_\tau) &= 0 \nonumber \\
+  \lambda_\tau &= 0
+\end{align}
+
+This constraint will be applied to the rest of the equations.
+
+\section*{Equation 3}
+
+\begin{align}
+& \frac{1}{4} e^{-\frac{1}{2}(\lambda + \nu)} \sin\theta \Big[ 
+  - e^{\lambda} r 
+   \big( \lambda_{\tau}^2 
+       - \lambda_{\tau} \nu_{\tau} 
+       + 2 \lambda_{\tau\tau} \big) \nonumber \\
+   & \quad - 4 e^{\lambda + \frac{\nu}{2}} r 
+     \big( 0 \lambda_{\tau} 
+          - 4 n f \vartheta_0' (-n f \vartheta_0' e^{-\frac{\nu}{2}}) \big) \nonumber\\
+ & \quad + e^{\nu} \Big(
+     -4 (0)^2 r e^{\lambda}
+     + 2 \nu_r 
+     - \lambda_r (2 + r \nu_r)
+     + r (\nu_r^2 + 2 \nu_{rr}) \nonumber \\
+     & \qquad + 4 e^{\lambda} (-n f \vartheta_0' e^{-\frac{\nu}{2}})^2
+   \Big)
+\Big] \nonumber \\
+&= \frac{1}{2} r \sin\theta \, e^{-\nu} \sqrt{e^{\lambda + \nu}}
+  \left( 2 V(\vartheta_0) e^{\nu} + (\vartheta_0')^2 \right) \nonumber \\ \nonumber \\
+& \frac{1}{2} e^{-\lambda} \Big[ 
+   - 4 e^{\lambda + \frac{\nu}{2}} r 
+     \big(
+          - 4 n f \vartheta_0' (-n f \vartheta_0' e^{-\frac{\nu}{2}}) \big) \nonumber\\
+ & \quad + e^{\nu} \Big(
+     2 \nu_r 
+     - \lambda_r (2 + r \nu_r)
+     + r (\nu_r^2 + 2 \nu_{rr}) + 4 e^{\lambda} (-n f \vartheta_0' e^{-\frac{\nu}{2}})^2
+   \Big)
+\Big] \nonumber \\
+&= r (\vartheta_0')^2 \nonumber \\ \nonumber \\
+& \frac{1}{2} \Big[ 
+   - 4 e^{\frac{\nu}{2}} r 
+     \big(
+           4 n^2 f^2 (\vartheta_0')^2 e^{-\frac{\nu}{2}} \big) \nonumber\\
+ & \quad + e^{\nu-\lambda} \Big(
+     2 \nu_r 
+     - \lambda_r (2 + r \nu_r)
+     + r (\nu_r^2 + 2 \nu_{rr}) + 4 e^{\lambda-\nu} n^2 f^2 (\vartheta_0')^2
+   \Big)
+\Big] \nonumber \\
+&= r (\vartheta_0')^2 \nonumber \\ \nonumber \\
+& \frac{1}{2} \Big[ -16 r n^2 f^2 (\vartheta_0')^2  \nonumber\\
+ & \quad + e^{\nu-\lambda} \Big(
+     2 \nu_r 
+     - \lambda_r (2 + r \nu_r)
+     + r (\nu_r^2 + 2 \nu_{rr})
+     \Big)
+     + 4 n^2 f^2 (\vartheta_0')^2
+\Big] \nonumber \\
+&= r (\vartheta_0')^2 \nonumber \\ \nonumber \\
+& -8 r n^2 f^2 (\vartheta_0')^2 + \frac{1}{2} e^{\nu-\lambda} \Big(
+     2 \nu_r 
+     - \lambda_r (2 + r \nu_r)
+     + r (\nu_r^2 + 2 \nu_{rr})
+     \Big)
+     + 2 n^2 f^2 (\vartheta_0')^2 \nonumber \\
+&= r (\vartheta_0')^2 \nonumber \\ \nonumber \\
+& \frac{1}{2} e^{\nu-\lambda} \Big(
+     2 \nu_r 
+     - \lambda_r (2 + r \nu_r)
+     + r (\nu_r^2 + 2 \nu_{rr})
+     \Big) 
+= (r + 8 r n^2 f^2 - 2 n^2 f^2) (\vartheta_0')^2
+\end{align}
+
+\section*{Equation 4}
+
+\begin{align}
+-\frac{1}{2} e^{\frac{1}{2} \nu} r \sin(\theta) 
+\left(
+    \nu_r \left( 
+        - e^{-\frac{1}{2} \nu} \vartheta_0' nf
+    \right)
+    + 2 \left(
+        \frac{1}{2} e^{-\frac{1}{2} \nu} nf \vartheta_0' \nu_r
+    \right)
+\right) &= 0 \nonumber \\ 
+    - \nu_r e^{-\frac{1}{2} \nu} \vartheta_0' nf
+    + e^{-\frac{1}{2} \nu} nf \vartheta_0' \nu_r &= 0 \nonumber \\
+0 &= 0
+\end{align}
+
+\section*{Equation 5}
+
+Equation 5 is functionally the same structure as Equation 4 and yields:
+\begin{align}
+  0 = 0
+\end{align}
+
+\section*{Equation 6}
+
+\section*{Equation 7}
+
+Equation 7 is functionally the same structure as Equation 2 and yields:
+\begin{align}
+  \lambda_\tau = 0
+\end{align}
 
 \end{document}
