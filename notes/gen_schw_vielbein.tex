@@ -9,7 +9,7 @@
 
 The General Schwarzchild Metric:
 \begin{align}
-  \dd{s^2} = -e^{\nu(t,r)}\dd{t^2} + e^{\lambda(t,r)}\dd{r^2} + r^2\dd{\theta^2} + r^2\sin^2{\theta}\dd{\phi^2}
+  \dd{s^2} = -e^{\nu(t,r)}\dd{t^2} + e^{\lambda(t,r)}\dd{r^2} + r^2\dd{\theta^2} + r^2\sin^2{\theta}\dd{\varphi^2}
 \end{align}
 Note the the trace of the Minkowski metric is $(-,+,+,+)$. This gives the following Metric Tensor and its inverse:
 \begin{align}
@@ -33,7 +33,7 @@ Calculating the Vielbeins:
 \begin{align}
   g_{\mu\nu} = \eta_{ab}e^a_\mu e^b_\nu
 \end{align}
-Since the metric is diagonal, the equation can be simplified by saying $a=b$. I will also constrain the Vielbein to being a diagonal matrix, which allows me to simplify further by saying $\mu = \nu$. This also gives a correspondance between local and Schwarzchild coordinates, where $a = 0,1,2,3$ correspond to $\mu = t,r,\theta,\phi$ respectively in the Vielbein. Anything else is $0$.
+Since the metric is diagonal, the equation can be simplified by saying $a=b$. I will also constrain the Vielbein to being a diagonal matrix, which allows me to simplify further by saying $\mu = \nu$. This also gives a correspondance between local and Schwarzchild coordinates, where $a = 0,1,2,3$ correspond to $\mu = t,r,\theta,\varphi$ respectively in the Vielbein. Anything else is $0$.
 
 So I am left with:
 \begin{align}
@@ -44,7 +44,7 @@ Solving this explicitly:
   g_{tt} &= (-1)(e^0_t)^2 = -e^{\nu(t,r)} &&e^0_t = e^{\frac{\nu(t,r)}{2}} \\
   g_{rr} &= (e^1_r)^2 = e^{\lambda(t,r)} &&e^1_r = e^{\frac{\lambda(t,r)}{2}} \\
   g_{\theta\theta} &= (e^2_\theta)^2 = r^2 &&e^2_\theta = r \\
-  g_{\phi\phi} &= (e^3_\phi)^2 = r^2\sin^2{\theta} &&e^3_\phi = r\sin{\theta}
+  g_{\varphi\varphi} &= (e^3_\varphi)^2 = r^2\sin^2{\theta} &&e^3_\varphi = r\sin{\theta}
 \end{align*}
 Therefore, the Vielbeins:
 \begin{align*}

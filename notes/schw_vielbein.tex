@@ -11,7 +11,7 @@
 
 The Schwarzchild Metric using natural units ($G = 1$ and $c = 1$):
 \begin{align*}
-  \dd{s}^2 = -\left(1 - \frac{2M}{r}\right)\dd{t}^2 + \left(1 - \frac{2M}{r}\right)^{-1}\dd{r}^2 + r^2\dd{\theta}^2 + r^2\sin^2{\theta}\dd{\phi}^2
+  \dd{s}^2 = -\left(1 - \frac{2M}{r}\right)\dd{t}^2 + \left(1 - \frac{2M}{r}\right)^{-1}\dd{r}^2 + r^2\dd{\theta}^2 + r^2\sin^2{\theta}\dd{\varphi}^2
 \end{align*}
 
 This gives the following metric tensor:
@@ -38,9 +38,9 @@ Using this, I can calculate the forms of the Vielbein $e^a_\mu$, $e^\mu_a$, and 
 
 Sanity check: The Vielbein is simply a set of basis vectors for each point of the manifold that express our metric. It will satisfy the following equation:
 \begin{align*}
-  g_{\mu\nu} = \eta_{ab}e^a_\mu e^b_\nu \qquad a,b = 0,1,2,3 \quad \mu,\nu = t,r,\theta,\phi
+  g_{\mu\nu} = \eta_{ab}e^a_\mu e^b_\nu \qquad a,b = 0,1,2,3 \quad \mu,\nu = t,r,\theta,\varphi
 \end{align*}
-where $\eta_{ab} = \text{diag}(-1,1,1,1)$ and is the Minkowski metric. Since the metric is diagonal, the equation can be simplified by saying $a=b$. I will also constrain the Vielbein to being a diagonal matrix, so $e^a_\mu = \text{diag}(e^0_t,e^1_r,e^2_\theta,e^3_\phi)$, which allows me to simplify further by saying $\mu = \nu$. This also gives a correspondance between local and Schwarzchild coordinates, where $a = 0,1,2,3$ correspond to $\mu = t,r,\theta,\phi$ respectively in the Vielbein. Anything else is $0$.
+where $\eta_{ab} = \text{diag}(-1,1,1,1)$ and is the Minkowski metric. Since the metric is diagonal, the equation can be simplified by saying $a=b$. I will also constrain the Vielbein to being a diagonal matrix, so $e^a_\mu = \text{diag}(e^0_t,e^1_r,e^2_\theta,e^3_\varphi)$, which allows me to simplify further by saying $\mu = \nu$. This also gives a correspondance between local and Schwarzchild coordinates, where $a = 0,1,2,3$ correspond to $\mu = t,r,\theta,\varphi$ respectively in the Vielbein. Anything else is $0$.
 
 So, I am left with the equation:
 \begin{align*}
@@ -55,8 +55,8 @@ Solving this explicitly:
   &&\rightarrow \quad e^1_r = \left(1 - \frac{2M}{r}\right)^{-\frac{1}{2}} \\
   g_{\theta\theta} &= r^2 = (e^2_\theta)^2 \quad
   &&\rightarrow \quad e^2_\theta = r \\
-  g_{\phi\phi} &= r^2\sin^2{\theta} = (e^3_\phi)^2 \quad
-  &&\rightarrow \quad e^3_\phi = r\sin{\theta}
+  g_{\varphi\varphi} &= r^2\sin^2{\theta} = (e^3_\varphi)^2 \quad
+  &&\rightarrow \quad e^3_\varphi = r\sin{\theta}
 \end{align*}
 
 So, the Vielbein:
