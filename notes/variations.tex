@@ -13,8 +13,8 @@
 I'll start by considering the total action $S_{tot} = S_{EC} + S_m + S_{NY}$ where
 \begin{align}
   S_{EC} &= -\frac{M_{Pl}^2}{4}\int\epsilon_{abcd}V^a \wedge V^b \wedge R^{cd} \\
-  S_m &= \frac{1}{2}\int\dd\phi\wedge\hodge\dd\phi \\
-  S_{NY} &= -\mathit{nf}\int\dd\phi\wedge T^a \wedge V_a
+  S_m &= \frac{1}{2}\int\dd\vartheta\wedge\hodge\dd\vartheta \\
+  S_{NY} &= -\mathit{nf}\int\dd\vartheta\wedge T^a \wedge V_a
 \end{align}
 $S_{EC}$ is the Einstein-Cartan gravitational action, $S_m$ is the scalar field action, and $S_{NY}$ is the coupling to a Nieh-Yan Form. I'll also define:
 \begin{align*}
@@ -36,17 +36,17 @@ The variation of the total action is
 
 \subsection{Scalar Field Action}
 \begin{align}
-  \var_V{S_m} &= \frac{1}{2} \int \var\dd\phi \wedge \hodge\dd\phi + \dd\phi \wedge \var\hodge\dd\phi \nonumber \\
-  &=  \frac{1}{2} \int \dd\phi \wedge \var\hodge\dd\phi \qquad \text{since } \var_V\dd\phi = 0 
+  \var_V{S_m} &= \frac{1}{2} \int \var\dd\vartheta \wedge \hodge\dd\vartheta + \dd\vartheta \wedge \var\hodge\dd\vartheta \nonumber \\
+  &=  \frac{1}{2} \int \dd\vartheta \wedge \var\hodge\dd\vartheta \qquad \text{since } \var_V\dd\vartheta = 0 
 \end{align}
 Expanding:
 \begin{align*}
-  \hodge\dd\phi &= \hodge(\partial_\mu\phi \dd x^\mu) = \hodge(\partial_\mu\phi V^\mu_a V^a)\\ 
-  &= \frac{1}{3!} V^\mu_a \partial_\mu\phi \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d
+  \hodge\dd\vartheta &= \hodge(\partial_\mu\vartheta \dd x^\mu) = \hodge(\partial_\mu\vartheta V^\mu_a V^a)\\ 
+  &= \frac{1}{3!} V^\mu_a \partial_\mu\vartheta \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d
 \end{align*}
 So,
 \begin{align}
-  \var_V\hodge\dd\phi &= \frac{1}{3!}(\var V^\mu_a)\partial_\mu\phi \epsilon^a_{bcd} V^b \wedge V^c \wedge V^d + \frac{1}{3!} V^\mu_a \partial_\mu\phi \epsilon^a_{bcd}\var(V^b \wedge V^c \wedge V^d)
+  \var_V\hodge\dd\vartheta &= \frac{1}{3!}(\var V^\mu_a)\partial_\mu\vartheta \epsilon^a_{bcd} V^b \wedge V^c \wedge V^d + \frac{1}{3!} V^\mu_a \partial_\mu\vartheta \epsilon^a_{bcd}\var(V^b \wedge V^c \wedge V^d)
 \end{align}
 Using the identity
 \begin{align*}
@@ -55,46 +55,46 @@ Using the identity
 \end{align*}
 and plugging that into eq. (7) and using the antisymmetry of the Levi-Civita Symbol in the second term:
 \begin{align*}
-  &\var_V\hodge\dd\phi \\ &= -\frac{1}{3!}(\var V^j_\nu)V^\nu_a V_j^\mu \partial_\mu\phi \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d + \frac{1}{3!} V^\mu_a \partial_\mu\phi (3)\epsilon^a_{bcd}\var{V^b} \wedge V^c \wedge V^d \\
-  &= -\frac{1}{3!}(\var V^j_\nu)V^\nu_a \partial_j\phi \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d + \frac{1}{2} \partial_a\phi \epsilon^a_{bcd}\var{V^b} \wedge V^c \wedge V^d
+  &\var_V\hodge\dd\vartheta \\ &= -\frac{1}{3!}(\var V^j_\nu)V^\nu_a V_j^\mu \partial_\mu\vartheta \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d + \frac{1}{3!} V^\mu_a \partial_\mu\vartheta (3)\epsilon^a_{bcd}\var{V^b} \wedge V^c \wedge V^d \\
+  &= -\frac{1}{3!}(\var V^j_\nu)V^\nu_a \partial_j\vartheta \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d + \frac{1}{2} \partial_a\vartheta \epsilon^a_{bcd}\var{V^b} \wedge V^c \wedge V^d
 \end{align*}
-Since we are in an orthonormal frame defined by Vielbeins, we can also say that $\partial_a\phi \epsilon^a_{bcd} = \partial^a\phi \epsilon_{abcd}$. Using this in the second term:
+Since we are in an orthonormal frame defined by Vielbeins, we can also say that $\partial_a\vartheta \epsilon^a_{bcd} = \partial^a\vartheta \epsilon_{abcd}$. Using this in the second term:
 \begin{align*}
-  \var_V\hodge\dd\phi &= -\frac{1}{3!}(\var V^j_\nu)V^\nu_a \partial_j\phi \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d + \frac{1}{2} \partial^a\phi \epsilon_{abcd}\var{V^b} \wedge V^c \wedge V^d \\
-  &= -(\var V^j_\nu)V^\nu_a \partial_j\phi (\frac{1}{3!} \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d) + \partial^a\phi (\frac{1}{2} \epsilon_{abcd} V^c \wedge V^d) \wedge \var{V^b}
+  \var_V\hodge\dd\vartheta &= -\frac{1}{3!}(\var V^j_\nu)V^\nu_a \partial_j\vartheta \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d + \frac{1}{2} \partial^a\vartheta \epsilon_{abcd}\var{V^b} \wedge V^c \wedge V^d \\
+  &= -(\var V^j_\nu)V^\nu_a \partial_j\vartheta (\frac{1}{3!} \epsilon^a_{bcd}V^b \wedge V^c \wedge V^d) + \partial^a\vartheta (\frac{1}{2} \epsilon_{abcd} V^c \wedge V^d) \wedge \var{V^b}
 \end{align*}
 Finally, using the definition of a dual, we can simplify the terms in parenthesis:
 \begin{align*}
-  \var_V\hodge\dd\phi &= -(\var V^j_\nu)V^\nu_a \partial_j\phi (\hodge V^a) + \partial^a\phi \hodge(V_a \wedge V_b) \wedge \var{V^b} \\
-  &= -\partial_j\phi (\var V^j_a) (\hodge V^a) + \partial^a\phi \var{V^b} \wedge \hodge(V_a \wedge V_b) \\
-  &= -\partial_j\phi \hodge(\var V^j_a V^a) + \partial^a\phi \var{V^b} \wedge \hodge(V_a \wedge V_b) \\
-  &= -\partial_j\phi \hodge(\var V^j) + \partial^a\phi \var{V^b} \wedge \hodge(V_a \wedge V_b) \\
+  \var_V\hodge\dd\vartheta &= -(\var V^j_\nu)V^\nu_a \partial_j\vartheta (\hodge V^a) + \partial^a\vartheta \hodge(V_a \wedge V_b) \wedge \var{V^b} \\
+  &= -\partial_j\vartheta (\var V^j_a) (\hodge V^a) + \partial^a\vartheta \var{V^b} \wedge \hodge(V_a \wedge V_b) \\
+  &= -\partial_j\vartheta \hodge(\var V^j_a V^a) + \partial^a\vartheta \var{V^b} \wedge \hodge(V_a \wedge V_b) \\
+  &= -\partial_j\vartheta \hodge(\var V^j) + \partial^a\vartheta \var{V^b} \wedge \hodge(V_a \wedge V_b) \\
 \end{align*}
 Relabeling indices, we are left with
 \begin{align}
-  \var_V\hodge\dd\phi = \partial^a\phi \var{V^b} \wedge \hodge(V_a \wedge V_b) -\partial_b\phi \hodge(\var V^b)
+  \var_V\hodge\dd\vartheta = \partial^a\vartheta \var{V^b} \wedge \hodge(V_a \wedge V_b) -\partial_b\vartheta \hodge(\var V^b)
 \end{align}
 
 Plugging this back into eq. (6):
 \begin{align*}
-  \var_V{S_m} &= \frac{1}{2} \int \dd\phi \wedge (\partial^a\phi \var{V^b} \wedge \hodge(V_a \wedge V_b) -\partial_b\phi \hodge(\var V^b)) \\
-   &= \frac{1}{2} \int \partial^a\phi \dd\phi \wedge \var{V^b} \wedge \hodge(V_a \wedge V_b) - \partial_b\phi \dd\phi \wedge \hodge(\var V^b) \\
+  \var_V{S_m} &= \frac{1}{2} \int \dd\vartheta \wedge (\partial^a\vartheta \var{V^b} \wedge \hodge(V_a \wedge V_b) -\partial_b\vartheta \hodge(\var V^b)) \\
+   &= \frac{1}{2} \int \partial^a\vartheta \dd\vartheta \wedge \var{V^b} \wedge \hodge(V_a \wedge V_b) - \partial_b\vartheta \dd\vartheta \wedge \hodge(\var V^b) \\
 \end{align*}
 Using the identity $A \wedge \hodge B = B \wedge \hodge A$ when $A$ and $B$ have the same dimension in the second term:
 \begin{align}
-  \var_V{S_m} &= \frac{1}{2} \int \partial^a\phi \dd\phi \wedge \hodge(V_a \wedge V_b) \wedge \var{V^b} - \partial_b\phi (\var V^b) \wedge \hodge\dd\phi \nonumber \\
-  &= \boxed{\frac{1}{2} \int (\partial^a\phi \dd\phi \wedge \hodge(V_a \wedge V_b) \wedge \var{V^b} + \partial_b\phi \hodge\dd\phi \wedge \var{V^b})}
+  \var_V{S_m} &= \frac{1}{2} \int \partial^a\vartheta \dd\vartheta \wedge \hodge(V_a \wedge V_b) \wedge \var{V^b} - \partial_b\vartheta (\var V^b) \wedge \hodge\dd\vartheta \nonumber \\
+  &= \boxed{\frac{1}{2} \int (\partial^a\vartheta \dd\vartheta \wedge \hodge(V_a \wedge V_b) \wedge \var{V^b} + \partial_b\vartheta \hodge\dd\vartheta \wedge \var{V^b})}
 \end{align}
 
 \subsection{Nieh-Yan Form}
 \begin{align*}
-  \var_V{S_{NY}} = -\mathit{nf}\int \dd\phi \wedge (\var{T^a} \wedge V_a + T^a \wedge \var{V_a})
+  \var_V{S_{NY}} = -\mathit{nf}\int \dd\vartheta \wedge (\var{T^a} \wedge V_a + T^a \wedge \var{V_a})
 \end{align*}
 Expanding:
 \begin{align}
-  &\var_V{S_{NY}} \nonumber \\ &= -\mathit{nf}\int \dd\phi \wedge ((\var{\dd{V^a}} + \omega^a_b \wedge \var{V^b}) \wedge V_a + (\dd V^a + \omega^a_b \wedge V^b) \wedge \var{V_a}) \nonumber \\
-  &= -\mathit{nf}\int \dd\phi \wedge (\var{\dd{V^a}} \wedge V_a + \omega^a_b \wedge \var{V^b} \wedge V_a + \dd V^a \wedge \var{V_a} + \omega^a_b \wedge V^b \wedge \var{V_a}) \nonumber \\
-  &= -\mathit{nf}\int \dd\phi \wedge (\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a} + \omega^a_b \wedge (\var{V^b} \wedge V_a + V^b \wedge \var{V_a}))
+  &\var_V{S_{NY}} \nonumber \\ &= -\mathit{nf}\int \dd\vartheta \wedge ((\var{\dd{V^a}} + \omega^a_b \wedge \var{V^b}) \wedge V_a + (\dd V^a + \omega^a_b \wedge V^b) \wedge \var{V_a}) \nonumber \\
+  &= -\mathit{nf}\int \dd\vartheta \wedge (\var{\dd{V^a}} \wedge V_a + \omega^a_b \wedge \var{V^b} \wedge V_a + \dd V^a \wedge \var{V_a} + \omega^a_b \wedge V^b \wedge \var{V_a}) \nonumber \\
+  &= -\mathit{nf}\int \dd\vartheta \wedge (\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a} + \omega^a_b \wedge (\var{V^b} \wedge V_a + V^b \wedge \var{V_a}))
 \end{align}
 Focusing on the term with the spin connection:
 \begin{align}
@@ -117,7 +117,7 @@ Plugging this back into eq. (11):
 \end{align*}
 Plugging this back into eq.(10):
 \begin{align}
-  \var_V{S_{NY}} &= -\mathit{nf}\int \dd\phi \wedge (\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c)
+  \var_V{S_{NY}} &= -\mathit{nf}\int \dd\vartheta \wedge (\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c)
 \end{align}
 
 Now, focusing on $\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a}$. We can use the Leibniz Rule:
@@ -130,16 +130,16 @@ Now, focusing on $\var{\dd{V^a}} \wedge V_a + \dd V^a \wedge \var{V_a}$. We can 
 \end{align*}
 Plugging this into eq. (12):
 \begin{align*}
-  &\var_V{S_{NY}} \\ &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + \dd{V^a} \wedge \var{V_a} + \dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c) \\
-  &= -\mathit{nf}\int \dd\phi \wedge (\dd(\var{V^a} \wedge V_a) + 2\dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c)
+  &\var_V{S_{NY}} \\ &= -\mathit{nf}\int \dd\vartheta \wedge (\dd(\var{V^a} \wedge V_a) + \dd{V^a} \wedge \var{V_a} + \dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c) \\
+  &= -\mathit{nf}\int \dd\vartheta \wedge (\dd(\var{V^a} \wedge V_a) + 2\dd V^a \wedge \var{V_a} + 2\omega_{bc} \wedge \var{V^b} \wedge V^c)
 \end{align*}
 The first term ends up being a boundary term due to, so we can drop the term. Therefore:
 \begin{align}
-  \var_V{S_{NY}} &= -2\mathit{nf}\int \dd\phi \wedge (\dd V^a \wedge \var{V_a} + \omega_{bc} \wedge \var{V^b} \wedge V^c) \nonumber \\
-  &= -2\mathit{nf} \int \dd\phi \wedge \dd V^a \wedge \var{V_a} + \dd\phi \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \nonumber \\
-  &= -2\mathit{nf} \int \dd\phi \wedge \dd V_a \wedge \var{V^a} - \dd\phi \wedge \omega_{bc} \wedge V^c \wedge \var{V^b} \nonumber \\
-  &= -2\mathit{nf} \int \dd\phi \wedge \dd V_a \wedge \var{V^a} - \dd\phi \wedge \omega_{cb} \wedge V^b \wedge \var{V^c} \nonumber \\
-  &= \boxed{-2\mathit{nf} \int \dd\phi \wedge \dd V_a \wedge \var{V^a} + \dd\phi \wedge \omega_{bc} \wedge V^b \wedge \var{V^c}}
+  \var_V{S_{NY}} &= -2\mathit{nf}\int \dd\vartheta \wedge (\dd V^a \wedge \var{V_a} + \omega_{bc} \wedge \var{V^b} \wedge V^c) \nonumber \\
+  &= -2\mathit{nf} \int \dd\vartheta \wedge \dd V^a \wedge \var{V_a} + \dd\vartheta \wedge \omega_{bc} \wedge \var{V^b} \wedge V^c \nonumber \\
+  &= -2\mathit{nf} \int \dd\vartheta \wedge \dd V_a \wedge \var{V^a} - \dd\vartheta \wedge \omega_{bc} \wedge V^c \wedge \var{V^b} \nonumber \\
+  &= -2\mathit{nf} \int \dd\vartheta \wedge \dd V_a \wedge \var{V^a} - \dd\vartheta \wedge \omega_{cb} \wedge V^b \wedge \var{V^c} \nonumber \\
+  &= \boxed{-2\mathit{nf} \int \dd\vartheta \wedge \dd V_a \wedge \var{V^a} + \dd\vartheta \wedge \omega_{bc} \wedge V^b \wedge \var{V^c}}
 \end{align}
 
 \section{Spin Connection}
@@ -175,66 +175,66 @@ $\var_\omega{S_m}$ is trivially $0$.
 
 \subsection{Nieh-Yan Form}
 \begin{align*}
-  \var_\omega{S_{NY}} &= -\mathit{nf} \int \dd{\phi} \wedge \var{T^a} \wedge V_a \\
-  &= -\mathit{nf} \int \dd{\phi} \wedge (\var{\omega^a_b} \wedge V^b) \wedge V_a \\
-  &= -\mathit{nf} \int \dd{\phi} \wedge \var{\omega^a_b} \wedge \eta^{bc}V_c \wedge V_a \\
-  &= -\mathit{nf} \int \dd{\phi} \wedge \eta^{bc}\var{\omega^a_b} \wedge V_c \wedge V_a \\
-  &= -\mathit{nf} \int \dd{\phi} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a \\
+  \var_\omega{S_{NY}} &= -\mathit{nf} \int \dd{\vartheta} \wedge \var{T^a} \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\vartheta} \wedge (\var{\omega^a_b} \wedge V^b) \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\vartheta} \wedge \var{\omega^a_b} \wedge \eta^{bc}V_c \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\vartheta} \wedge \eta^{bc}\var{\omega^a_b} \wedge V_c \wedge V_a \\
+  &= -\mathit{nf} \int \dd{\vartheta} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a \\
 \end{align*}
 Antisymmetrizing:
 \begin{align}
-  \var_\omega{S_{NY}} &= -\frac{\mathit{nf}}{2} \int \dd{\phi} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a \nonumber \\
-  &= \boxed{\frac{\mathit{nf}}{2} \int \dd{\phi} \wedge V_a \wedge V_c \wedge \var{\omega^{ac}}}
+  \var_\omega{S_{NY}} &= -\frac{\mathit{nf}}{2} \int \dd{\vartheta} \wedge \var{\omega^{ac}} \wedge V_c \wedge V_a \nonumber \\
+  &= \boxed{\frac{\mathit{nf}}{2} \int \dd{\vartheta} \wedge V_a \wedge V_c \wedge \var{\omega^{ac}}}
 \end{align}
 
 I am antisymmetrizing here but not when varying $S_{EC}$. This is because in eq. (15), the spin connections are being summed over with each other and the Levi-Civita Symbol, both of which are antisymmetric. In eq. (16), however, the spin connection is being summed over with two Vielbeins which are not antisymmetric, hence the $\frac{1}{2}$ factor must be added.
 
 \section{Scalar Field}
 \subsection{Einstein-Cartan Action}
-$\var_\phi{S_{EC}}$ is trivially 0.
+$\var_\vartheta{S_{EC}}$ is trivially 0.
 
 \subsection{Scalar Field Action}
 \begin{align}
-  \var_\phi{S_m} &= \frac{1}{2} \int (\var{\dd{\phi}} \wedge \hodge{\dd{\phi}} + \dd{\phi} \wedge \var{\hodge{\dd{\phi}}}) \nonumber \\
-  &= \frac{1}{2} \int (\dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \dd{\phi} \wedge \hodge{\dd(\var{\phi})})
+  \var_\vartheta{S_m} &= \frac{1}{2} \int (\var{\dd{\vartheta}} \wedge \hodge{\dd{\vartheta}} + \dd{\vartheta} \wedge \var{\hodge{\dd{\vartheta}}}) \nonumber \\
+  &= \frac{1}{2} \int (\dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}} + \dd{\vartheta} \wedge \hodge{\dd(\var{\vartheta})})
 \end{align}
 We can simplify using the identity $A \wedge \hodge B = B \wedge \hodge A$ when $A$ and $B$ have the same dimension.
 \begin{align*}
-  \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \dd{\phi} \wedge \hodge{\dd(\var{\phi})} &= \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} \\
-  &= 2\dd(\var{\phi}) \wedge \hodge{\dd{\phi}}
+  \dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}} + \dd{\vartheta} \wedge \hodge{\dd(\var{\vartheta})} &= \dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}} + \dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}} \\
+  &= 2\dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}}
 \end{align*}
 Plugging this into eq. (17):
 \begin{align}
-  \var_\phi{S_m} &= \int \dd(\var{\phi}) \wedge \hodge{\dd{\phi}}
+  \var_\vartheta{S_m} &= \int \dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}}
 \end{align}
 Using the Leibniz Rule:
 \begin{align*}
-  \dd(\var{\phi} \wedge \hodge{\dd{\phi}}) &= \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \var{\phi} \wedge \dd{\hodge{\dd{\phi}}} \\
-  &= \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} + \var{\phi}\dd{\hodge{\dd{\phi}}}
+  \dd(\var{\vartheta} \wedge \hodge{\dd{\vartheta}}) &= \dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}} + \var{\vartheta} \wedge \dd{\hodge{\dd{\vartheta}}} \\
+  &= \dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}} + \var{\vartheta}\dd{\hodge{\dd{\vartheta}}}
 \end{align*}
-Since $\var{\phi}$ is a 0-form, a wedge product with it is the same as regular multiplication. So:
+Since $\var{\vartheta}$ is a 0-form, a wedge product with it is the same as regular multiplication. So:
 \begin{align*}
-  \dd(\var{\phi}) \wedge \hodge{\dd{\phi}} &= \dd(\var{\phi} \wedge \hodge{\dd{\phi}}) - \var{\phi}\dd{\hodge{\dd{\phi}}}
+  \dd(\var{\vartheta}) \wedge \hodge{\dd{\vartheta}} &= \dd(\var{\vartheta} \wedge \hodge{\dd{\vartheta}}) - \var{\vartheta}\dd{\hodge{\dd{\vartheta}}}
 \end{align*}
 Plugging this into eq. (18) and dropping the total derivative:
 \begin{align}
-  \var_\phi{S_m} &= \boxed{- \int \var{\phi}\dd{\hodge{\dd{\phi}}}}
+  \var_\vartheta{S_m} &= \boxed{- \int \var{\vartheta}\dd{\hodge{\dd{\vartheta}}}}
 \end{align}
 
 \subsection{Nieh-Yan Form}
 \begin{align}
-  \var_\phi{S_{NY}} &= -\mathit{nf} \int \dd(\var{\phi}) \wedge T^a \wedge V_a
+  \var_\vartheta{S_{NY}} &= -\mathit{nf} \int \dd(\var{\vartheta}) \wedge T^a \wedge V_a
 \end{align}
 Using the Leibniz Rule:
 \begin{align*}
-  \dd(\var{\phi} \wedge T^a \wedge V_a) &= \dd{\var{\phi}} \wedge T^a \wedge V_a + \var{\phi} \wedge \dd(T^a \wedge V_a) \\
-  \dd(\var{\phi} \wedge T^a \wedge V_a) - \var{\phi} \wedge \dd(T^a \wedge V_a) &= \dd{\var{\phi}} \wedge T^a \wedge V_a
+  \dd(\var{\vartheta} \wedge T^a \wedge V_a) &= \dd{\var{\vartheta}} \wedge T^a \wedge V_a + \var{\vartheta} \wedge \dd(T^a \wedge V_a) \\
+  \dd(\var{\vartheta} \wedge T^a \wedge V_a) - \var{\vartheta} \wedge \dd(T^a \wedge V_a) &= \dd{\var{\vartheta}} \wedge T^a \wedge V_a
 \end{align*}
 Plugging this into eq. (20) and dropping the total derivative:
 \begin{align}
-  \var_\phi{S_{NY}} &= -\mathit{nf} \int -\var{\phi} \wedge \dd(T^a \wedge V_a) \nonumber \\
-  &= \mathit{nf} \int \var{\phi} \wedge \dd(T^a \wedge V_a) \nonumber \\
-  &= \boxed{\mathit{nf} \int \dd(T^a \wedge V_a) \wedge \var{\phi}}
+  \var_\vartheta{S_{NY}} &= -\mathit{nf} \int -\var{\vartheta} \wedge \dd(T^a \wedge V_a) \nonumber \\
+  &= \mathit{nf} \int \var{\vartheta} \wedge \dd(T^a \wedge V_a) \nonumber \\
+  &= \boxed{\mathit{nf} \int \dd(T^a \wedge V_a) \wedge \var{\vartheta}}
 \end{align}
 
 \end{document}
