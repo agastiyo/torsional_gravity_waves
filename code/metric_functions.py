@@ -1,0 +1,74 @@
+#%%
+import numpy as np
+from scipy.integrate import solve_ivp
+from matplotlib.widgets import Slider
+import matplotlib.pyplot as plt
+
+#%%
+# --- Parameters ---
+K0_range = np.linspace(0e-10, 1e-9, 1100)
+# torsion parameter (set to 0 for Schwarzschild)
+
+r_start = 100  # starting radius (asymptotically flat region)
+r_end = 1      # integrate inward toward smaller r
+
+# --- Initial conditions ---
+beta0 = 1e-6   # small deviation: e^β ≈ 1 + beta0
+u0 = 1.0       # asymptotically u ~ 1
+
+#%%
+def solve_metric_functions(K0):
+  # --- System of ODEs ---
+  def system(r, y):
+    u, beta = y
+    du_dr = -2 * u / r * (np.exp(beta) - 1)
+    dbeta_dr = 0.5 * (r * u * K0 - 2 / r * (np.exp(beta) - 1))
+    return [du_dr, dbeta_dr]
+
+  # --- Integrate ---
+  sol = solve_ivp(
+    system, (r_start, r_end), [u0, beta0],
+    dense_output=True, max_step=0.1, rtol=1e-9, atol=1e-9
+  )
+
+  # --- Extract results ---
+  r_vals = sol.t
+  u_vals, beta_vals = sol.y
+  alpha_vals = beta_vals - np.log(u_vals)  # since u = e^{-α + β}
+
+  return r_vals, beta_vals, alpha_vals
+
+#%%
+
+# --- Initial plot ---
+fig, ax = plt.subplots(figsize=(7, 5))
+plt.subplots_adjust(bottom=0.25)
+
+K0_init = K0_range[0]
+r_vals, beta_vals, alpha_vals = solve_metric_functions(K0_init)
+line_beta, = ax.plot(r_vals, np.exp(beta_vals), label=r"$e^{\beta(r)}$")
+line_alpha, = ax.plot(r_vals, np.exp(alpha_vals), label=r"$e^{\alpha(r)}$")
+
+ax.set_xlabel("r")
+ax.set_ylabel("Metric functions")
+ax.set_title(f"Torsionful metric solution (K₀={K0_init})")
+ax.legend()
+ax.grid(True)
+
+# --- Slider ---
+ax_slider = plt.axes([0.2, 0.1, 0.65, 0.03])
+slider = Slider(ax_slider, "K₀", K0_range[0], K0_range[-1], valinit=K0_init, valstep=K0_range[1] - K0_range[0])
+
+# --- Update function ---
+def update(val):
+  K0 = slider.val
+  r_vals, beta_vals, alpha_vals = solve_metric_functions(K0)
+  line_beta.set_ydata(np.exp(beta_vals))
+  line_alpha.set_ydata(np.exp(alpha_vals))
+  ax.set_title(f"Torsionful metric solution (K₀={K0})")
+  fig.canvas.draw_idle()
+
+slider.on_changed(update)
+
+plt.show()
+# %%
