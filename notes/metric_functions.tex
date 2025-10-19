@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{physics}
+
+\begin{document}
+
+\begin{center}
+  \Large\textbf{Deriving the Metric Functions} \\
+  \large\text{10/18/2025}
+\end{center}
+
+\section*{Initial System}
+
+The mathematica notebook provides us with the following equations of motion:
+\begin{align}
+  e^\alpha(1+r\alpha_r) - e^\beta(e^\alpha+3n^2f^2r^2\vartheta_{0\tau}^2) = \frac{1}{2}r^2e^\beta\vartheta_{0\tau}^2 \\
+  e^\alpha(1-r\beta_r) - e^\beta(e^\alpha-3n^2f^2r^2\vartheta_{0\tau}^2) = -\frac{1}{2}r^2e^\beta\vartheta_{0\tau}^2 \\
+  e^\alpha\left((2+r\alpha_r)(\alpha_r-\beta_r)+2r\alpha_{rr}\right) - 12e^\beta rn^2f^2\vartheta_{0\tau}^2=2re^\beta \vartheta_{0\tau}^2 \\
+  \beta_\tau = \alpha_\tau = \vartheta_{0r} = 0
+\end{align}
+So, we can say $\alpha = \alpha(r)$, $\beta = \beta(r)$, $\vartheta_0 = \vartheta_0(\tau)$.
+
+Adding (1) and (2) gives:
+\begin{align}
+  \alpha_r - \beta_r = \frac{2}{r}(e^\beta - 1)
+\end{align}
+and subtracting (1) and (2) gives:
+\begin{align}
+  \alpha_r + \beta_r = re^{-\alpha+\beta}\vartheta_{0\tau}^2(1+6n^2f^2)
+\end{align}
+
+Assume $u(r) = e^{-\alpha+\beta}$ and $K(\tau) = \vartheta_{0\tau}^2(1+6n^2f^2)$:
+\begin{align}
+  -\frac{u_r}{u} = \frac{2}{r}(e^\beta-1)
+\end{align}
+and
+\begin{align}
+  \alpha_r + \beta_r = ruK
+\end{align}
+Getting $u_r$ from (9) and $\beta_r$ from (5) and (8), we can see the system is nonlinearly coupled:
+\begin{align}
+  u_r &= -\frac{2u}{r}(e^\beta-1) \\
+  \beta_r &= \frac{1}{2}\left(ruK-\frac{2}{r}(e^{\beta}-1)\right)
+\end{align}
+
+\section*{Torsionless Case}
+
+In the torsionless case, $\vartheta_0 = 0$, so in turn $K(\tau) = 0$. Using (5) and (6):
+\begin{align}
+  \alpha_r - \beta_r &= \frac{2}{r}(e^\beta - 1) \\
+  \alpha_r &= -\beta_r
+\end{align}
+so,
+\begin{align*}
+  -2\dv{\beta}{r} &= \frac{2}{r}(e^\beta - 1) \\
+  -\int\frac{1}{e^\beta - 1}\dd{\beta} &= \int\frac{1}{r}\dd{r} \\
+  -(\ln|e^\beta - 1| - \ln|e^\beta|) &= \ln|r| + C \\
+  -\ln|\frac{e^\beta - 1}{e^\beta}| &= \ln|r| + C \\
+  \ln|1-e^{-\beta}| &= -\ln|r| + C \\
+  1-e^{-\beta} &= Cr^{-1} \\
+  e^{-\beta} &= 1-Cr^{-1}
+\end{align*}
+\begin{align}
+  e^\beta &= \left(1-\frac{C}{r}\right)^{-1}
+\end{align}
+
+Integrating (12),
+\begin{align}
+  \alpha &= -\beta + D \\
+  \alpha &= -\beta \text{ (with a coordinate redefinition)} \\
+  e^\alpha &= e^{-\beta} \\
+  e^\alpha &= \left(1-\frac{C}{r}\right)
+\end{align}
+
+Plugging this into the General Schwarzchild metric:
+\begin{align}
+  \dd{s^2} = -\left(1-\frac{C}{r}\right)\dd{t^2} + \left(1-\frac{C}{r}\right)^{-1}\dd{r^2} + r^2\dd{\theta^2} + r^2\sin^2{\theta}\dd{\varphi^2}
+\end{align}
+Expecting the Newtonian limit at large $r$, we find $C = 2M$ when $G=1$, giving us the Schwarzchild metric.
+\end{document}
