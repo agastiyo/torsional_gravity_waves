@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 #%%
 # --- Parameters ---
-K0_range = np.linspace(0e-10, 1e-9, 1100)
+K0_range = np.linspace(0e-10, 1e-9, 10001)
 # torsion parameter (set to 0 for Schwarzschild)
 
 r_start = 100  # starting radius (asymptotically flat region)
@@ -15,6 +15,28 @@ r_end = 1      # integrate inward toward smaller r
 # --- Initial conditions ---
 beta0 = 1e-6   # small deviation: e^β ≈ 1 + beta0
 u0 = 1.0       # asymptotically u ~ 1
+
+# Note here that e^alpha is the temporal term and e^beta is the radial term.
+
+# Overall, I've noticed that at K0 = 0, the schwarzchild metric is obtained.
+# e^alpha goes to -inf at r->0 and e^beta goes to inf at r->0.
+# This is regular black hole behavior
+
+# As K0 increases, the functions become softer
+# At a critical point, e^alpha and e^beta both approach a finite number.
+# e^beta->0 and e^alpha->a negative value. Is this an artifact of my ics?
+
+# After this point, the r->0 behavor for the functions switches.
+# e^alpha->inf at r->0 and e^beta->-inf at r->0
+# The black hole works as a reflector??
+
+# Ive found that the critical value of K is always 6 to the order of some magnitude depending on the initial beta.
+# K0_crit = 6e-9 with beta0 = 1e-5
+# K0_crit = 6e-10 with beta0 = 1e-6
+# K0_crit = 6e-11 with beta0 = 1e-7
+# This might have something to do with the 6n^2f^2 factor in the equation for K
+
+# Maybe some correlation with r_start as well?
 
 #%%
 def solve_metric_functions(K0):
@@ -38,6 +60,14 @@ def solve_metric_functions(K0):
 
   return r_vals, beta_vals, alpha_vals
 
+def find_horizon(r_vals, alpha_vals, threshold=1e-3):
+    exp_alpha = np.exp(alpha_vals)
+    mask = exp_alpha < threshold # wherever e^alpha ~ 0
+    if np.any(mask):
+        return r_vals[mask][0]
+    else:
+        return None
+
 #%%
 
 # --- Initial plot ---
@@ -48,6 +78,11 @@ K0_init = K0_range[0]
 r_vals, beta_vals, alpha_vals = solve_metric_functions(K0_init)
 line_beta, = ax.plot(r_vals, np.exp(beta_vals), label=r"$e^{\beta(r)}$")
 line_alpha, = ax.plot(r_vals, np.exp(alpha_vals), label=r"$e^{\alpha(r)}$")
+
+r_h = find_horizon(r_vals, alpha_vals)
+hline = None
+if r_h:
+  hline = ax.axvline(r_h, color='r', linestyle='--', label='Horizon')
 
 ax.set_xlabel("r")
 ax.set_ylabel("Metric functions")
@@ -61,10 +96,20 @@ slider = Slider(ax_slider, "K₀", K0_range[0], K0_range[-1], valinit=K0_init, v
 
 # --- Update function ---
 def update(val):
+  global hline
   K0 = slider.val
   r_vals, beta_vals, alpha_vals = solve_metric_functions(K0)
   line_beta.set_ydata(np.exp(beta_vals))
   line_alpha.set_ydata(np.exp(alpha_vals))
+  
+  if hline:
+    hline.remove()
+    hline = None
+  
+  r_h = find_horizon(r_vals, alpha_vals)
+  if r_h:
+    hline = ax.axvline(r_h, color='r', linestyle='--', label='Horizon')
+    
   ax.set_title(f"Torsionful metric solution (K₀={K0})")
   fig.canvas.draw_idle()
 
