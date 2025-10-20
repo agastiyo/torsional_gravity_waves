@@ -42,6 +42,25 @@ Getting $u_r$ from (9) and $\beta_r$ from (5) and (8), we can see the system is 
   \beta_r &= \frac{1}{2}\left(ruK-\frac{2}{r}(e^{\beta}-1)\right)
 \end{align}
 
+Differentiating (10):
+\begin{align*}
+  \beta_{rr} &= \frac{K}{2}(u+ru_r)-\frac{1}{2}(-\frac{2}{r^2}(e^\beta -1)-\frac{1}{r}(\beta_r e^\beta)) \\
+  &= \frac{K(u+ru_r)}{2} + \frac{e^\beta - 1}{r^2} - \frac{\beta_r e^\beta}{r}
+\end{align*}
+Substituting $u_r$ from (9):
+\begin{align*}
+  \beta_{rr} &= \frac{Ku(3-2e^\beta)}{2} + \frac{e^\beta - 1}{r^2} - \frac{\beta_r e^\beta}{r}
+\end{align*}
+From (10), we see $Ku = \frac{2\beta_r}{r} + \frac{2(e^\beta - 1)}{r^2}$:
+\begin{align}
+  \beta_{rr} &= \frac{\beta_r(3-2e^\beta)}{r} + \frac{(e^\beta-1)(3-2e^\beta)}{r^2} + \frac{e^\beta - 1}{r^2} - \frac{\beta_r e^\beta}{r} \nonumber \\
+  &= -\beta_r\frac{3(e^\beta - 1)}{r} + \frac{-2e^{2\beta}+6e^\beta-4}{r^2}
+\end{align}
+
+Again, this ODE is unsolvable. Sympy was unable to find a closed-form solution. This only becomes solvable assuming a constant $\beta$, or in a torsionless case.
+
+The python file attempts to numerically solve the system posed in (9) and (10) with assumed initial conditions. Observations are written in comments in the code.
+
 \section*{Torsionless Case}
 
 In the torsionless case, $\vartheta_0 = 0$, so in turn $K(\tau) = 0$. Using (5) and (6):
@@ -63,7 +82,7 @@ so,
   e^\beta &= \left(1-\frac{C}{r}\right)^{-1}
 \end{align}
 
-Integrating (12),
+Integrating (13),
 \begin{align}
   \alpha &= -\beta + D \\
   \alpha &= -\beta \text{ (with a coordinate redefinition)} \\
