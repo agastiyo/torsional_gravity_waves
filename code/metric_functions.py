@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 
 #%%
 # --- Parameters ---
-K0_range = np.linspace(0e-10, 1e-9, 10001)
+K0_range = np.linspace(0e-12, 1e-11, 10001)
 # torsion parameter (set to 0 for Schwarzschild)
 
-r_start = 100  # starting radius (asymptotically flat region)
+r_start = 1000  # starting radius (asymptotically flat region)
 r_end = 1      # integrate inward toward smaller r
 
 # --- Initial conditions ---
@@ -31,12 +31,17 @@ u0 = 1.0       # asymptotically u ~ 1
 # The black hole works as a reflector??
 
 # Ive found that the critical value of K is always 6 to the order of some magnitude depending on the initial beta.
+# (while r_start = 100)
 # K0_crit = 6e-9 with beta0 = 1e-5
 # K0_crit = 6e-10 with beta0 = 1e-6
 # K0_crit = 6e-11 with beta0 = 1e-7
 # This might have something to do with the 6n^2f^2 factor in the equation for K
 
-# Maybe some correlation with r_start as well?
+# Same thing with r_start
+# (while beta0 = 1e-6)
+# K0_crit = 6e-8 with r_start = 10
+# K0_crit = 6e-10 with r_start = 100
+# K0_crit = 6e-12 with r_start = 1000
 
 #%%
 def solve_metric_functions(K0):
