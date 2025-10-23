@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 
 #%%
 # --- Parameters ---
-K0_range = np.linspace(0e-12, 1e-11, 10001)
+K0_range = np.linspace(0e-10, 1e-9, 10001)
 # torsion parameter (set to 0 for Schwarzschild)
 
-r_start = 1000  # starting radius (asymptotically flat region)
+r_start = 100  # starting radius (asymptotically flat region)
 r_end = 1      # integrate inward toward smaller r
 
 # --- Initial conditions ---
