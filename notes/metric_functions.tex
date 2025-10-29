@@ -105,6 +105,24 @@ This gives us equations for $e^\alpha$ and $e^\beta$:
   e^\alpha = 1 - \frac{C}{r} \qquad e^\beta = \frac{r(r-C)}{r^2 - 2Cr + D}
 \end{align*}
 
+\section*{Klein-Gordon Equation}
+
+We also have the Klein-Gordon equation:
+\begin{align*}
+  \partial_\mu\left(\sqrt{-g}g^{\mu\nu}\partial_\nu \vartheta \right) &= \frac{\mathit{nf}}{2} \partial_\mu\left(T_{\nu\rho}^a V_{a\sigma}\right) \varepsilon^{\mu\nu\rho\sigma}
+\end{align*}
+For this, mathematica gives us:
+\begin{align*}
+  &e^{\frac{3}{2}\alpha}(4 + r\alpha_r - r\beta_r)(\vartheta_{0r}) + 2e^{\frac{3}{2}\alpha}r(\vartheta_{0r}^2) \\ & \quad + e^{\frac{1}{2}\beta} (e^{\frac{1}{2}(\alpha+\beta)}+6e^{\frac{1}{2}(\alpha+\beta)}n^2f^2)r((\alpha_\tau - \beta_\tau)(\vartheta_{0\tau}) - 2(\vartheta_{0\tau}^2)) = 0 \\ \\
+  &e^{\frac{1}{2}\beta} (e^{\frac{1}{2}(\alpha+\beta)}+6e^{\frac{1}{2}(\alpha+\beta)}n^2f^2)r(- 2(\vartheta_{0\tau}^2)) = 0 \\
+  &- e^{\frac{1}{2}\alpha + \beta} (1+6n^2f^2)r(2(\vartheta_{0\tau}^2)) = 0 \\
+  &- 2re^{\frac{1}{2}\alpha + \beta} \vartheta_{0\tau}^2(1+6n^2f^2) = 0
+\end{align*}
+Here, we can substitute $K(\tau)$:
+\begin{align}
+  - e^{\frac{1}{2}\alpha + \beta}2rK &= 0
+\end{align}
+
 \section*{Torsionless Case}
 
 In the torsionless case, $\vartheta_0 = 0$, so in turn $K(\tau) = 0$. Using (5) and (6):
@@ -126,7 +144,7 @@ so,
   e^\beta &= \left(1-\frac{C}{r}\right)^{-1}
 \end{align}
 
-Integrating (14),
+Integrating (15),
 \begin{align}
   \alpha &= -\beta + D \nonumber\\
   \alpha &= -\beta \text{ (with a coordinate redefinition)} \nonumber \\

@@ -69,16 +69,16 @@ From section 2 of Pollari (in literature):
 \begin{align*}
   \frac{\mathit{nf}}{2} \partial_\mu\left(V^a_\nu T_{\rho\sigma a}\right) \dd x^\mu \wedge \dd x^\nu \wedge \dd x^\rho \wedge \dd x^\sigma &= \dd{\hodge{\dd{\vartheta}}}
 \end{align*}
-Writing this in terms of the D'Alembert operator, which can be written as $\square \vartheta = \delta \vartheta = \hodge{\dd}\hodge{\dd\vartheta}$ since $\vartheta$ is a 0-form. Therefore: $\dd \hodge{\dd\vartheta} = \square \vartheta \hodge{1}$. The equation above is written as:
+Writing this in terms of the D'Alembert operator, which can be written as $\square \vartheta = \hodge{\dd}\hodge{\dd\vartheta}$ since $\vartheta$ is a 0-form. Therefore: $\dd \hodge{\dd\vartheta} = \square \vartheta \hodge{1}$. The equation above is written as:
 \begin{align*}
   \square \vartheta &= \frac{\mathit{nf}}{2} \partial_\mu\left(V^a_\nu T_{\rho\sigma a}\right) \hodge(\dd x^\mu \wedge \dd x^\nu \wedge \dd x^\rho \wedge \dd x^\sigma) \\
-  \square \vartheta &= \frac{\mathit{nf}}{2} \partial_\mu\left(V^a_\nu T_{\rho\sigma a}\right) \sqrt{|g|}\varepsilon^{\mu\nu\rho\sigma}
+  \square \vartheta &= \frac{\mathit{nf}}{2} \partial_\mu\left(V^a_\nu T_{\rho\sigma a}\right) \frac{1}{\sqrt{-g}}\varepsilon^{\mu\nu\rho\sigma}
 \end{align*}
-Writing the D'Alembertian in coordinate form:
+Where $\varepsilon$ is the Levi-Civita Symbol. Writing the D'Alembertian in coordinate form:
 \begin{align*}
-  \frac{1}{\sqrt{|g|}} \partial_\mu\left(\sqrt{|g|}g^{\mu\nu}\partial_\nu \vartheta \right) &= \frac{\mathit{nf}}{2} \partial_\mu\left(V^a_\nu T_{\rho\sigma a}\right) \sqrt{|g|}\varepsilon^{\mu\nu\rho\sigma} \\
-  \frac{1}{\sqrt{|g|}} \partial_\mu\left(\sqrt{|g|}g^{\mu\nu}\partial_\nu \vartheta \right) &= \frac{\mathit{nf}}{2} \partial_\mu\left(T_{\rho\sigma}^a V_{a\nu}\right) \sqrt{|g|}\varepsilon^{\mu\nu\rho\sigma} \\
-  \frac{1}{\sqrt{|g|}} \partial_\mu\left(\sqrt{|g|}g^{\mu\nu}\partial_\nu \vartheta \right) &= \frac{\mathit{nf}}{2} \partial_\mu\left(T_{\nu\rho}^a V_{a\sigma}\right) \sqrt{|g|}\varepsilon^{\mu\nu\rho\sigma}
+  \frac{1}{\sqrt{-g}} \partial_\mu\left(\sqrt{-g}g^{\mu\nu}\partial_\nu \vartheta \right) &= \frac{\mathit{nf}}{2} \partial_\mu\left(V^a_\nu T_{\rho\sigma a}\right) \frac{1}{\sqrt{-g}}\varepsilon^{\mu\nu\rho\sigma} \\
+  \partial_\mu\left(\sqrt{-g}g^{\mu\nu}\partial_\nu \vartheta \right) &= \frac{\mathit{nf}}{2} \partial_\mu\left(T_{\rho\sigma}^a V_{a\nu}\right) \varepsilon^{\mu\nu\rho\sigma} \\
+  \partial_\mu\left(\sqrt{-g}g^{\mu\nu}\partial_\nu \vartheta \right) &= \frac{\mathit{nf}}{2} \partial_\mu\left(T_{\nu\rho}^a V_{a\sigma}\right) \varepsilon^{\mu\nu\rho\sigma}
 \end{align*}
 
 \end{document} 
