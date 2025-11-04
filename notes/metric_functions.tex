@@ -63,47 +63,20 @@ The python file attempts to numerically solve the system posed in (9) and (10) w
 
 \section*{Solving with Ansatz}
 
-We can define an ansatz $e^\alpha = 1 - \frac{C}{r}$ where $C$ is some constant. $\alpha_r$ is then $\left(1-\frac{C}{r}\right)^{-1}\frac{C}{r^2} = \frac{C}{r(r-C)}$. With this, (5) can be rewritten:
-\begin{align*}
-  \frac{C}{r(r-C)} - \beta_r &= \frac{2}{r}(e^\beta - 1) \\
-  \beta_r &= \frac{C}{r(r-C)} - \frac{2}{r}(e^\beta - 1)
-\end{align*}
-Let $y(r) = e^\beta$ and $\beta_r = \frac{y'}{y}$:
-\begin{align*}
-  \frac{y'}{y} &= \frac{C}{r(r-C)} - \frac{2}{r}(y - 1) \\
-  y' &= -\frac{2}{r}y^2 + \left(\frac{C}{r(r-C)} + \frac{2}{r}\right)y \\
-  y' &= -\frac{2}{r}y^2 + \frac{2r-C}{r(r-C)}y \\
-  \frac{y'}{y^2} &= -\frac{2}{r} + \frac{2r-C}{r(r-C)}\frac{1}{y}
-\end{align*}
-Let $u(r) = \frac{1}{y} = e^{-\beta}$. Then, $u'(r) = -\frac{y'}{y^2}$:
-\begin{align*}
-  -u' &= -\frac{2}{r} + \frac{2r-C}{r(r-C)}u \\
-  u' + \frac{2r-C}{r(r-C)}u &= \frac{2}{r}
-\end{align*}
+We define an ansatz:
+\begin{equation}
+  e^\alpha = a = 1 - \frac{C}{r} \qquad \alpha_r = a^{-1} \frac{C}{r^2}
+\end{equation}
 
-This ODE can be solved using the integrating factor method. First, set our integrating factor:
-\begin{align*}
-  \mu(r) &= \exp\left(\int \frac{2r-C}{r(r-C)} dr\right) \\
-  &= \exp(\ln{r} + \ln|r-C|) \\
-  &= r(r-C)
-\end{align*}
-Using the integrating factor, the ODE can be written as:
-\begin{align*}
-  (\mu(r)u)' &= \frac{2}{r}\mu(r) \\
-  (\mu(r)u)' &= 2(r-C) \\
-  \mu(r)u &= \int 2(r-C) dr \\
-  ur(r-C) &= 2\left(\frac{1}{2}r^2 - Cr + D\right) \\
-  u &= \frac{r^2 - 2Cr + D}{r(r-C)}
-\end{align*}
-Remembering that $u = e^{-\beta}$:
+Evaluating (1) with the ansatz:
+
 \begin{align}
-  e^\beta = \frac{r(r-C)}{r^2 - 2Cr + D}
+  a(1+\frac{C}{r}a^{-1}) = e^\beta (\frac{1}{2}r^2\vartheta_{\tau}^2 + a + 3n^2f^2r^2\vartheta_{\tau}^2) \nonumber \\
+  a + \frac{C}{r} = e^\beta (\frac{1}{2}r^2\vartheta_{\tau}^2 + a + 3n^2f^2r^2\vartheta_{\tau}^2) \nonumber \\
+  e^\beta = (\frac{1}{2}r^2\vartheta_{\tau}^2 + a + 3n^2f^2r^2\vartheta_{\tau}^2)^{-1} \nonumber \\
+  e^\beta = \left( a + r^{2} \vartheta_{\tau}^{2} \left( \tfrac{1}{2} + 3 n^{2} f^{2} \right) \right)^{-1} \nonumber \\
+  e^\beta = \frac{1}{a} \left( 1 + \frac{r^{2} \vartheta_{\tau}^{2} \left( \tfrac{1}{2} + 3 n^{2} f^{2} \right)}{a} \right)^{-1}
 \end{align}
-
-This gives us equations for $e^\alpha$ and $e^\beta$:
-\begin{align*}
-  e^\alpha = 1 - \frac{C}{r} \qquad e^\beta = \frac{r(r-C)}{r^2 - 2Cr + D}
-\end{align*}
 
 \section*{Klein-Gordon Equation}
 
