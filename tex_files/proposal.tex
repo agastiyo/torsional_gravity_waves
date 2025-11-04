@@ -1,0 +1,174 @@
+\documentclass[12pt]{article}
+\usepackage{physics}
+\usepackage{amssymb}
+
+\newcommand{\hodge}{{^\star}}
+
+\begin{document}
+
+\title{Torsion-Induced Corrections to the Schwarzschild Metric from Nieh-Yan Modified Gravity}
+\author{Agastya Gaur \and Indranil Das}
+
+\maketitle
+
+\begin{abstract}
+  We investigate black hole solutions in Einstein-Cartan gravity with a Nieh-Yan coupling to a scalar field. By evaluating the equations of motion for a Schwarzschild-like ansatz, we derive a torsionful correction to the radial component of the metric. The resulting modification depends on the scalar field's time derivative, introducing a constant rescaling to the radial term while preserving the Schwarzschild form in the absence of torsion.
+\end{abstract}
+
+\pagebreak
+
+\section{Actions}
+
+We consider total action $S_{tot} = S_{EC} + S_m + S_{NY}$ composed of the following terms: the Einstein-Cartan gravitational action
+\begin{equation}
+  S_{EC} = -\frac{M_{Pl}^2}{4}\int\varepsilon_{abcd}V^a \wedge V^b \wedge R^{cd},
+\end{equation}
+the scalar field action
+\begin{equation}
+  S_m = \frac{1}{2}\int\dd\vartheta\wedge\hodge\dd\vartheta,
+\end{equation}
+and the Nieh-Yan coupling
+\begin{equation}
+  S_{NY} = -\mathit{nf}\int\dd\vartheta\wedge T^a \wedge V_a.
+\end{equation}
+
+The curvature and torsion two forms are defined
+\begin{align}
+  R^{ab} &= \dd\omega^{ab} + \omega^a{}_c \wedge \omega^{cb}, \\
+  T^a &= \dd V^a + \omega^a{}_b \wedge V^b.
+\end{align}
+
+\subsection{Equations of Motion}
+
+Varying with respect to the Vielbein yields the Einstein equations
+\begin{equation}
+  \frac{M_{Pl}^2}{2}R^{cd} \wedge V^b \varepsilon_{abcd} - 2\mathit{nf}(\dd\vartheta \wedge \dd V_a + \dd\vartheta \wedge \omega_{ba} \wedge V^b) = \tau_D,
+\end{equation}
+where
+\begin{equation*}
+  \tau_D = - \frac{1}{2}(\partial^b\vartheta \dd\vartheta \wedge \hodge(V_b \wedge V_a) + \partial_a\vartheta \hodge\dd\vartheta)
+\end{equation*}
+
+Varying with respect to the spin connection yields the torsion constraint
+\begin{equation}
+  \varepsilon_{abcd} T^c \wedge V^d = -\frac{2nf}{M_{Pl}^2}\dd \vartheta \wedge V_a \wedge V_b
+\end{equation}
+
+Varying with respect to the scalar yields the Klein-Gordon equation
+
+\begin{equation}
+  \partial_\mu\left(\sqrt{-g}g^{\mu\nu}\partial_\nu \vartheta \right) = \frac{\mathit{nf}}{2} \partial_\mu\left(T_{\nu\rho}{}^a V_{a\sigma}\right) \varepsilon^{\mu\nu\rho\sigma}
+\end{equation}
+
+When evaluating the Equations of Motion, we set $M_{Pl} = 1$.
+
+\subsection{Spin Connection}
+
+The spin connection is decomposed into torsion-free and torsion-induced parts
+
+\begin{equation}
+  \omega^{ab} = \bar{\omega}^{ab} + \tilde{\omega}^{ab}
+\end{equation}
+where
+\begin{equation*}
+  \tilde{\omega}^{0b} = 0 \qquad \tilde{\omega}^{ab} = \phi(\tau)\varepsilon^{ab}{}_k V^k
+\end{equation*}
+
+\section{Application to Black Holes}
+
+To model a static, spherically symmetric black hole, we adopt the generalized Schwarzschild metric
+\begin{equation}
+  \dd{s^2} = -e^{\alpha(\tau,r)}\dd{\tau^2} + e^{\beta(\tau,r)}\dd{r^2} + r^2\dd{\theta^2} + r^2\sin^2{\theta}\dd{\varphi^2}.
+\end{equation}
+This has the following metric tensor and inverse:
+\begin{align}
+  g_{\mu\nu} &= 
+  \begin{pmatrix}
+    -e^{\alpha(\tau,r)} & 0 & 0 & 0 \\
+    0 & e^{\beta(\tau,r)} & 0 & 0 \\
+    0 & 0 & r^2 & 0 \\
+    0 & 0 & 0 & r^2\sin^2{\theta} \\
+  \end{pmatrix} \\ \nonumber \\
+  g^{\mu\nu} &= 
+  \begin{pmatrix}
+    -e^{-\alpha(\tau,r)} & 0 & 0 & 0 \\
+    0 & e^{-\beta(\tau,r)} & 0 & 0 \\
+    0 & 0 & \frac{1}{r^2} & 0 \\
+    0 & 0 & 0 & \frac{1}{r^2\sin^2{\theta}} \\
+  \end{pmatrix}
+\end{align}
+
+The Vielbeins are
+\begin{align*}
+  V^a{}_\mu &= \begin{pmatrix}
+    e^{\frac{\alpha(\tau,r)}{2}} & 0 & 0 & 0 \\
+    0 & e^{\frac{\beta(\tau,r)}{2}} & 0 & 0 \\
+    0 & 0 & r & 0 \\
+    0 & 0 & 0 & r\sin{\theta}
+  \end{pmatrix} \\ \\
+  V_a{}^\mu = g^{\mu\nu}\eta_{ab}V^b{}_\nu &=
+  \begin{pmatrix}
+    e^{\frac{-\alpha(\tau,r)}{2}} & 0 & 0 & 0 \\
+    0 & e^{\frac{-\beta(\tau,r)}{2}} & 0 & 0 \\
+    0 & 0 & \frac{1}{r} & 0 \\
+    0 & 0 & 0 & \frac{1}{r\sin{\theta}}
+  \end{pmatrix} \\ \\
+  V^{a\mu} = g^{\mu\nu}V^a{}_\nu &=
+  \begin{pmatrix}
+    -e^{\frac{-\alpha(\tau,r)}{2}} & 0 & 0 & 0 \\
+    0 & e^{\frac{-\beta(\tau,r)}{2}} & 0 & 0 \\
+    0 & 0 & \frac{1}{r} & 0 \\
+    0 & 0 & 0 & \frac{1}{r\sin{\theta}}
+  \end{pmatrix}
+\end{align*}
+
+\subsection{Torsion Constraint}
+
+Evaluating the Torsion constraint with the general Schwarzchild metric and full spin connection we find
+\begin{equation}
+  \phi(\tau) = -nfe^{-\frac{\alpha}{2}} \vartheta_{\tau}
+\end{equation}
+
+\subsection{Einstein Equations}
+
+Evaluating the Einstein equations with the torsion-full spin connection yields the following differential equations:
+
+\begin{align}
+  e^\alpha(1+r\alpha_r) - e^\beta(e^\alpha+3n^2f^2r^2\vartheta_{\tau}^2) &= \frac{1}{2}r^2e^\beta\vartheta_{\tau}^2 \\
+  e^\alpha(1-r\beta_r) - e^\beta(e^\alpha-3n^2f^2r^2\vartheta_{\tau}^2) &= -\frac{1}{2}r^2e^\beta\vartheta_{\tau}^2 \\
+  e^\alpha\left((2+r\alpha_r)(\alpha_r-\beta_r)+2r\alpha_{rr}\right) - 12e^\beta rn^2f^2\vartheta_{\tau}^2&=2re^\beta \vartheta_{\tau}^2 \\
+  \beta_\tau = \alpha_\tau = \vartheta_{r} &= 0
+\end{align}
+So, we can say $\alpha = \alpha(r)$, $\beta = \beta(r)$, $\vartheta_0 = \vartheta_0(\tau)$. We introduce the standard Schwarzschild ansatz for $e^\alpha$:
+\begin{equation}
+  e^\alpha = a = 1 - \frac{C}{r} \qquad \alpha_r = a^{-1} \frac{C}{r^2}
+\end{equation}
+
+Evaluating eq.14 with the ansatz gives us
+\begin{align}
+  e^\beta = \frac{1}{a} \left( 1 + \frac{r^{2} \vartheta_{\tau}^{2} \left( \tfrac{1}{2} + 3 n^{2} f^{2} \right)}{a} \right)^{-1} \nonumber \\ \nonumber \\
+  e^\beta = \left(1 - \frac{C}{r}\right)^{-1} \left( 1 + \frac{r^{2} \vartheta_{\tau}^{2} \left( \tfrac{1}{2} + 3 n^{2} f^{2} \right)}{1 - \frac{C}{r}} \right)^{-1} \nonumber \\
+\end{align}
+This corresponds to the Schwarzschild radial term modified by a torsion-dependent correction.
+
+\subsection{Klein Gordon Equation}
+
+Evaluating the Klein Gordon Equation yields
+\begin{align}
+  - 2re^{\frac{1}{2}\alpha + \beta} \vartheta_{\tau\tau}(1+6n^2f^2) = 0
+\end{align}
+which requires the scalar field's time derivative $\vartheta_\tau$ to be constant.
+
+\section{Torsionful Metric}
+
+The torsionful metric for a black hole then takes the form
+\begin{equation}
+  \dd{s^2} = -\left(1 - \frac{C}{r}\right)\dd{\tau^2} + \left(1 - \frac{C}{r}\right)^{-1} \Omega \dd{r^2} + r^2\dd{\theta^2} + r^2\sin^2{\theta}\dd{\varphi^2}
+\end{equation}
+where $\Omega$ is the torsional correction term
+\begin{equation*}
+  \Omega = \left( 1 + \frac{r^{2} \vartheta_{\tau}^{2} \left( \tfrac{1}{2} + 3 n^{2} f^{2} \right)}{1 - \frac{C}{r}} \right)^{-1}
+\end{equation*}
+
+Because $\vartheta_\tau$ is constant, the torsional correction $\Omega$ remains constant, effectively rescaling the radial metric component.
+\end{document}
