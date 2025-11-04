@@ -9,6 +9,7 @@ nbs/
 
 # Ignore latex output files
 notes/output/
+tex_files/output/
 
 # -----------------------------------
 # macOS system files
